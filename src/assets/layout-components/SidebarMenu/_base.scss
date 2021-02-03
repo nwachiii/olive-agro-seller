@@ -18,6 +18,7 @@ body {
     padding: 2px ($spacer) 1px 0;
   }
 
+
   .app-sidebar-button {
     padding-top: $spacer / 2.4;
     padding-bottom: $spacer / 2.4;
@@ -29,10 +30,10 @@ body {
     width: 100%;
     font-weight: normal;
     transition: $transition-base;
-    color: $secondary;
+    color: #2b313e;
     white-space: nowrap;
 
-    &.active,
+    &.active, &.focus,
     &:hover {
       color: #95c53e;
       background: #2b313e;
