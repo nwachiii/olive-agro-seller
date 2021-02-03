@@ -6,7 +6,7 @@ body {
     width: $sidebar-width;
     display: flex;
     align-items: center;
-    background: rgba(255, 255, 255, 1);
+    background: rgb(177, 159, 159);
     padding-left: ($spacer);
     padding-right: ($spacer);
     justify-content: space-between;
@@ -17,7 +17,6 @@ body {
       color: $gray-200;
     }
   }
-
 
   .app-sidebar-header-btn {
     transition: $transition-base;
