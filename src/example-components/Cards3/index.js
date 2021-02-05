@@ -7,7 +7,7 @@ import { ExampleWrapperSeamless } from '../../layout-components';
 import Cards1Examples1 from '../Cards1/Cards1Examples1';
 import Cards2Examples8 from '../Cards2/Cards2Examples8';
 import Cards5Examples29 from '../Cards5/Cards5Examples29';
-import Cards7Examples48 from '../Cards7/Cards7Examples48';
+import Cards7Examples48 from '../Cards4/OtherHomeCards';
 import Cards8Examples55 from '../Cards8/Cards8Examples55';
 import Cards9Examples56 from '../Cards9/Cards9Examples56';
 import Cards9Examples61 from '../Cards9/Cards9Examples61';

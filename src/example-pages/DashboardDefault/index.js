@@ -5,6 +5,7 @@ import { PageTitle } from '../../layout-components';
 
 import PaginationBasic from '../../example-components/Pagination/PaginationBasic';
 import HomeFirstCard from '../../example-components/Cards4/HomeFirstCard';
+import OtherHomeCards from '../../example-components/Cards4/OtherHomeCards';
 
 export default function DashboardDefault() {
   return (
@@ -16,6 +17,7 @@ export default function DashboardDefault() {
 
       <VStack spacing="4em" my="4em">
         <HomeFirstCard />
+        <OtherHomeCards />
         <PaginationBasic />
       </VStack>
     </Fragment>
