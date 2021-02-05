@@ -4,16 +4,16 @@ import { PageTitle } from '../../layout-components';
 
 import { ExampleWrapperSeamless } from '../../layout-components';
 
-import Cards1Examples1 from '../../example-components/Cards1/Cards1Examples1';
-import Cards4Examples23 from '../../example-components/Cards4/Cards4Examples23';
-import Cards2Examples8 from '../../example-components/Cards2/Cards2Examples8';
-import Cards5Examples29 from '../../example-components/Cards5/Cards5Examples29';
-import Cards7Examples48 from '../../example-components/Cards7/Cards7Examples48';
-import Cards8Examples55 from '../../example-components/Cards8/Cards8Examples55';
-import Cards9Examples56 from '../../example-components/Cards9/Cards9Examples56';
-import Cards9Examples61 from '../../example-components/Cards9/Cards9Examples61';
-import Cards11Examples70 from '../../example-components/Cards11/Cards11Examples70';
-import Cards12Examples79 from '../../example-components/Cards12/Cards12Examples79';
+import Cards1Examples1 from '../Cards1/Cards1Examples1';
+import Cards2Examples8 from '../Cards2/Cards2Examples8';
+import Cards5Examples29 from '../Cards5/Cards5Examples29';
+import Cards7Examples48 from '../Cards7/Cards7Examples48';
+import Cards8Examples55 from '../Cards8/Cards8Examples55';
+import Cards9Examples56 from '../Cards9/Cards9Examples56';
+import Cards9Examples61 from '../Cards9/Cards9Examples61';
+import Cards11Examples70 from '../Cards11/Cards11Examples70';
+import Cards12Examples79 from '../Cards12/Cards12Examples79';
+import HomeFirstCard from '../Cards4/HomeFirstCard';
 export default function Cards3() {
   return (
     <Fragment>
@@ -50,7 +50,7 @@ export default function Cards3() {
         <Cards12Examples79 />
       </ExampleWrapperSeamless>
       <ExampleWrapperSeamless sectionHeading="Cards 10">
-        <Cards4Examples23 />
+        <HomeFirstCard />
       </ExampleWrapperSeamless>
     </Fragment>
   );

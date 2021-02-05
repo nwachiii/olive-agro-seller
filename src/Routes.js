@@ -26,7 +26,7 @@ import RegularTables4 from './example-pages/RegularTables4';
 import FormsControls from './example-pages/FormsControls';
 
 const DashboardDefault = lazy(() => import('./example-pages/DashboardDefault'));
-const Cards3 = lazy(() => import('./example-pages/Cards3'));
+const Cards3 = lazy(() => import('./example-components/Cards3'));
 const LandingPage = lazy(() => import('./example-pages/LandingPage'));
 const Accordions = lazy(() => import('./example-pages/Accordions'));
 const Modals = lazy(() => import('./example-pages/Modals'));

@@ -8,7 +8,7 @@ export { default as Scrollable } from './Scrollable';
 export { default as Badges } from './Badges';
 export { default as Icons } from './Icons';
 export { default as UtilitiesHelpers } from './UtilitiesHelpers';
-export { default as Cards3 } from './Cards3';
+export { default as Cards3 } from '../example-components/Cards3';
 export { default as LandingPage } from './LandingPage';
 export { default as Accordions } from './Accordions';
 export { default as Modals } from './Modals';

@@ -1,10 +1,10 @@
 import React, { Fragment } from 'react';
+import { VStack } from '@chakra-ui/react';
 
 import { PageTitle } from '../../layout-components';
 
-import DashboardDefaultSection4 from '../../example-components/DashboardDefault/DashboardDefaultSection4';
 import PaginationBasic from '../../example-components/Pagination/PaginationBasic';
-import { VStack } from '@chakra-ui/react';
+import HomeFirstCard from '../../example-components/Cards4/HomeFirstCard';
 
 export default function DashboardDefault() {
   return (
@@ -15,7 +15,7 @@ export default function DashboardDefault() {
       />
 
       <VStack spacing="4em" my="4em">
-        <DashboardDefaultSection4 />
+        <HomeFirstCard />
         <PaginationBasic />
       </VStack>
     </Fragment>
