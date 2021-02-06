@@ -7,13 +7,13 @@ import { ExampleWrapperSeamless } from '../../layout-components';
 import Cards1Examples1 from '../Cards1/Cards1Examples1';
 import Cards2Examples8 from '../Cards2/Cards2Examples8';
 import Cards5Examples29 from '../Cards5/Cards5Examples29';
-import Cards7Examples48 from '../Cards4/OtherHomeCards';
 import Cards8Examples55 from '../Cards8/Cards8Examples55';
 import Cards9Examples56 from '../Cards9/Cards9Examples56';
 import Cards9Examples61 from '../Cards9/Cards9Examples61';
 import Cards11Examples70 from '../Cards11/Cards11Examples70';
 import Cards12Examples79 from '../Cards12/Cards12Examples79';
-import HomeFirstCard from '../Cards4/HomeFirstCard';
+import HomeFirstCard from '../../layout-components/Cards/HomeFirstCard';
+import OtherHomeCards from '../../layout-components/Cards/OtherHomeCards';
 export default function Cards3() {
   return (
     <Fragment>
@@ -32,7 +32,7 @@ export default function Cards3() {
         <Cards5Examples29 />
       </ExampleWrapperSeamless>
       <ExampleWrapperSeamless sectionHeading="Cards 4">
-        <Cards7Examples48 />
+        <OtherHomeCards />
       </ExampleWrapperSeamless>
       <ExampleWrapperSeamless sectionHeading="Cards 5">
         <Cards8Examples55 />

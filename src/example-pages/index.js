@@ -1,4 +1,4 @@
-export { default as DashboardDefault } from './DashboardDefault';
+export { default as DashboardDefault } from '../layout-components/DashboardDefault';
 export { default as Buttons } from './Buttons';
 export { default as Dropdowns } from './Dropdowns';
 export { default as NavigationMenus } from './NavigationMenus';

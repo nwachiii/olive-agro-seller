@@ -15,7 +15,7 @@ import { Flex } from '@chakra-ui/react';
 
 export default function HomeFirstCard() {
   // const classes = useStyles();
-  const [count, setCount] = useState(0);
+  const [count] = useState(0);
   return (
     <Fragment>
       <Grid container>

@@ -1,11 +1,11 @@
 import React, { Fragment } from 'react';
 import { VStack } from '@chakra-ui/react';
 
-import { PageTitle } from '../../layout-components';
+import { PageTitle } from '..';
 
 import PaginationBasic from '../../example-components/Pagination/PaginationBasic';
-import HomeFirstCard from '../../example-components/Cards4/HomeFirstCard';
-import OtherHomeCards from '../../example-components/Cards4/OtherHomeCards';
+import HomeFirstCard from '../Cards/HomeFirstCard';
+import OtherHomeCards from '../Cards/OtherHomeCards';
 
 export default function DashboardDefault() {
   return (
