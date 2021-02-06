@@ -2,7 +2,7 @@
   "props": [
     {
       "_id": "Inquires/Quotations",
-      "headerText": "INQUIRES &amp; QUOTATION",
+      "headerText": "INQUIRES & QUOTATION",
       "firstLink": "Unread",
       "secondLink": "View all",
       "responseText": "No new messages for now",
