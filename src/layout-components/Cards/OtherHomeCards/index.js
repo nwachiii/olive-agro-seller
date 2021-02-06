@@ -17,16 +17,17 @@ export default function OtherHomeCards() {
               <Flex
                 w="100%"
                 justify="space-between"
-                borderBottom="1px solid lightgray">
+                borderBottom="1px solid lightgray"
+                wrap="wrap">
                 <Box>
                   <Heading as="h5">{data.headerText}</Heading>
                 </Box>
                 <Box
                   direction="row"
-                  justify="space-between"
-                  spacing="4"
-                  color="#0e9146">
-                  <a href="/#" className="mx-4">
+                  justifyContent="space-between"
+                  color="#0e9146"
+                  textAlign="center">
+                  <a href="/#" className="mr-3">
                     {count} {data.firstLink}
                   </a>
 
