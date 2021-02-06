@@ -19,7 +19,7 @@ export default function OtherHomeCards() {
                 justify="space-between"
                 borderBottom="1px solid lightgray">
                 <Box>
-                  <Heading>{data.headerText}</Heading>
+                  <Heading as="h5">{data.headerText}</Heading>
                 </Box>
                 <Box
                   direction="row"
