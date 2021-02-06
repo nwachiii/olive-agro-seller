@@ -59,7 +59,7 @@ const Header = props => {
           </Hidden>
           <Hidden smDown>
             <Box className="app-logo-text d-flex align-items-center">
-              SELLER'S DASHBOARD
+              BUYER'S DASHBOARD
             </Box>
           </Hidden>
           <Box className="d-flex align-items-center">
