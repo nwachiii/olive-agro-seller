@@ -60,13 +60,13 @@ export default [
     "content": [
            {
         "label": "Inbox",
-        "description": "Add scrolling areas to any elements with custom scrollbars or default browser ones.",
-        "to": "/Scrollable"
+        "description": "All your received messages are contained here...",
+        "to": "/Inbox"
       },
               {
         "label": "Sent Messages",
         "description": "Add scrolling areas to any elements with custom scrollbars or default browser ones.",
-        "to": "/Scrollable"
+        "to": "/Inbox"
       },
       {
         "label": "Draft",

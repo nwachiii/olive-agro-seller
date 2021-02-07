@@ -17,7 +17,7 @@ import Dropdowns from './example-pages/Dropdowns';
 import NavigationMenus from './example-pages/NavigationMenus';
 import ProgressBars from './example-pages/ProgressBars';
 import Pagination from './example-pages/Pagination';
-import Scrollable from './example-pages/Scrollable';
+import Inbox from './example-pages/Inbox';
 import Badges from './example-pages/Badges';
 import Icons from './example-pages/Icons';
 import UtilitiesHelpers from './example-pages/UtilitiesHelpers';
@@ -99,7 +99,7 @@ const Routes = () => {
                 '/NavigationMenus',
                 '/ProgressBars',
                 '/Pagination',
-                '/Scrollable',
+                '/Inbox',
                 '/Badges',
                 '/Icons',
                 '/UtilitiesHelpers',
@@ -136,7 +136,7 @@ const Routes = () => {
                     />
                     <Route path="/ProgressBars" component={ProgressBars} />
                     <Route path="/Pagination" component={Pagination} />
-                    <Route path="/Scrollable" component={Scrollable} />
+                    <Route path="/Inbox" component={Inbox} />
                     <Route path="/Badges" component={Badges} />
                     <Route path="/Icons" component={Icons} />
                     <Route

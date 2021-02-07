@@ -55,7 +55,7 @@ export { default as PaginationBasic } from './PaginationBasic';
 export { default as ProgressBarsBasic } from './ProgressBarsBasic';
 export { default as ProgressBarsCircular } from './ProgressBarsCircular';
 export { default as ProgressBarsMultiple } from './ProgressBarsMultiple';
-export { default as ScrollableBasic } from './ScrollableBasic';
+export { default as InboxBasic } from './InboxBasic';
 export { default as TabsBasic } from './TabsBasic';
 export { default as PopoversBasic } from './PopoversBasic';
 export { default as UtilitiesHelpersPrimaryColors } from './UtilitiesHelpersPrimaryColors';
