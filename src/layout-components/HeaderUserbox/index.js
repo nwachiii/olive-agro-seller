@@ -59,16 +59,16 @@ export default function HeaderUserbox() {
         }}
         onClose={handleClose}
         className="ml-2">
-        <div className="dropdown-menu-right dropdown-menu-lg overflow-hidden p-0 ">
+        <div className="dropdown-menu-right dropdown-menu-lg overflow-hidden p-3">
           <List className="text-left bg-transparent d-flex align-items-center flex-column pt-0">
             <Box>
               <Avatar sizes="44" alt="Daudu Gbenga" src={Avatar} />
             </Box>
             <div className="pl-3  pr-3">
-              <div className="font-weight-bold text-center pt-2 line-height-1">
+              <div className="font-weight-bold text-center pt-2 pb-1 line-height-1">
                 Daudu Gbenga
               </div>
-              <span className="text-black-50 text-center">
+              <span className="text-black-50 text-center pt-2">
                 Agrigultural Engineer
               </span>
             </div>
@@ -76,7 +76,10 @@ export default function HeaderUserbox() {
             <ListItem button>My Account</ListItem>
             <ListItem button>Profile settings</ListItem>
             <ListItem button>Active sales</ListItem>
-            <Divider className="w-100" />
+            <Divider className="w-100 my-2" />
+            <ListItem button>Settings</ListItem>
+            <ListItem button>Log out</ListItem>
+
             {/* <ListItem className="d-block rounded-bottom px-3 pt-3 pb-0 text-center">
               <Tooltip arrow title="Twitter">
                 <Button color="default" className="text-twitter">

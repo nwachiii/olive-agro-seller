@@ -110,17 +110,17 @@ export default [
   },
 
   {
-    "label": "My Lists",
+    "label": "Products",
     "icon": "CodeIcon",
     "content": [
       {
-        "label": "Overview",
-        "description": "Tables are the backbone of almost all web applications.",
+        "label": "Latest Products",
+        "description": "",
         "to": "/Home"
       },
       {
-        "label": "Wire Transfer",
-        "description": "These can be used with other components and elements to create stunning and unique new elements for your UIs.",
+        "label": "My Products",
+        "description": "",
         "to": "/Orders"
       }
     ]

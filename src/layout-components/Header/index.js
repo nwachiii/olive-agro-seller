@@ -15,6 +15,7 @@ import HeaderUserbox from '../../layout-components/HeaderUserbox';
 
 import MenuOpenRoundedIcon from '@material-ui/icons/MenuOpenRounded';
 import MenuRoundedIcon from '@material-ui/icons/MenuRounded';
+import { Notifications } from '@material-ui/icons';
 
 const Header = props => {
   const toggleSidebarMobile = () => {
@@ -63,6 +64,7 @@ const Header = props => {
             </Box>
           </Hidden>
           <Box className="d-flex align-items-center">
+            <Notifications style={{ color: '#95c53e', cursor: 'pointer' }} />
             <HeaderUserbox />
             <Box className="toggle-sidebar-btn-mobile">
               <Tooltip title="Toggle Sidebar" placement="right">

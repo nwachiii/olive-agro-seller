@@ -1,5 +1,12 @@
 import React from 'react';
-import { Tabs, TabList, TabPanels, Tab, TabPanel } from '@chakra-ui/react';
+import {
+  Tabs,
+  TabList,
+  TabPanels,
+  Tab,
+  TabPanel,
+  Flex
+} from '@chakra-ui/react';
 import ToBeConfirmed from './ToBeConfirmed';
 import Unpaid from './Unpaid';
 import ToBeShipped from './ToBeShipped';
@@ -24,112 +31,114 @@ function AllOrdersIndex() {
         _focus={{
           paddingBottom: '0'
         }}>
-        <Tab
-          defaultIndex={1}
-          borderRadius="5px 5px 0 0"
-          borderColor="lightgray"
-          mr={(2, 4, 6, 10)}
-          _hover={{
-            background: '#95c53e'
-          }}
-          _active={{
-            borderBottom: '5px solid #95c53e'
-          }}
-          _focus={{
-            borderBottom: '5px solid #95c53e'
-          }}>
-          All
-        </Tab>
-        <Tab
-          borderRadius="5px 5px 0 0"
-          borderColor="lightgray"
-          mr={(2, 4, 6, 10)}
-          _hover={{
-            background: '#95c53e'
-          }}
-          _active={{
-            borderBottom: '4px solid #95c53e'
-          }}
-          _focus={{
-            borderBottom: '4px solid #95c53e'
-          }}>
-          To be Confirmed
-        </Tab>
-        <Tab
-          borderRadius="5px 5px 0 0"
-          borderColor="lightgray"
-          mr={(2, 4, 6, 10)}
-          _hover={{
-            background: '#95c53e'
-          }}
-          _active={{
-            borderBottom: '4px solid #95c53e'
-          }}
-          _focus={{
-            borderBottom: '4px solid #95c53e'
-          }}>
-          Unpaid
-        </Tab>
-        <Tab
-          borderRadius="5px 5px 0 0"
-          borderColor="lightgray"
-          mr={(2, 4, 6, 10)}
-          _hover={{
-            background: '#95c53e'
-          }}
-          _active={{
-            borderBottom: '4px solid #95c53e'
-          }}
-          _focus={{
-            borderBottom: '4px solid #95c53e'
-          }}>
-          To be Shipped
-        </Tab>
-        <Tab
-          borderRadius="5px 5px 0 0"
-          borderColor="lightgray"
-          mr={(2, 4, 6, 10)}
-          _hover={{
-            background: '#95c53e'
-          }}
-          _active={{
-            borderBottom: '4px solid #95c53e'
-          }}
-          _focus={{
-            borderBottom: '4px solid #95c53e'
-          }}>
-          To be received
-        </Tab>
-        <Tab
-          borderRadius="5px 5px 0 0"
-          borderColor="lightgray"
-          mr={(2, 4, 6, 10)}
-          _hover={{
-            background: '#95c53e'
-          }}
-          _active={{
-            borderBottom: '4px solid #95c53e'
-          }}
-          _focus={{
-            borderBottom: '4px solid #95c53e'
-          }}>
-          In Dispute
-        </Tab>
-        <Tab
-          borderRadius="5px 5px 0 0"
-          borderColor="lightgray"
-          mr={(2, 4, 6, 10)}
-          _hover={{
-            background: '#95c53e'
-          }}
-          _active={{
-            borderBottom: '4px solid #95c53e'
-          }}
-          _focus={{
-            borderBottom: '4px solid #95c53e'
-          }}>
-          Completed/Closed
-        </Tab>
+        <Flex wrap="wrap">
+          <Tab
+            defaultIndex={1}
+            borderRadius="5px 5px 0 0"
+            borderColor="lightgray"
+            mr={(2, 4, 6, 10)}
+            _hover={{
+              background: '#95c53e'
+            }}
+            _active={{
+              borderBottom: '5px solid #95c53e'
+            }}
+            _focus={{
+              borderBottom: '5px solid #95c53e'
+            }}>
+            All
+          </Tab>
+          <Tab
+            borderRadius="5px 5px 0 0"
+            borderColor="lightgray"
+            mr={(2, 4, 6, 10)}
+            _hover={{
+              background: '#95c53e'
+            }}
+            _active={{
+              borderBottom: '4px solid #95c53e'
+            }}
+            _focus={{
+              borderBottom: '4px solid #95c53e'
+            }}>
+            To be Confirmed
+          </Tab>
+          <Tab
+            borderRadius="5px 5px 0 0"
+            borderColor="lightgray"
+            mr={(2, 4, 6, 10)}
+            _hover={{
+              background: '#95c53e'
+            }}
+            _active={{
+              borderBottom: '4px solid #95c53e'
+            }}
+            _focus={{
+              borderBottom: '4px solid #95c53e'
+            }}>
+            Unpaid
+          </Tab>
+          <Tab
+            borderRadius="5px 5px 0 0"
+            borderColor="lightgray"
+            mr={(2, 4, 6, 10)}
+            _hover={{
+              background: '#95c53e'
+            }}
+            _active={{
+              borderBottom: '4px solid #95c53e'
+            }}
+            _focus={{
+              borderBottom: '4px solid #95c53e'
+            }}>
+            To be Shipped
+          </Tab>
+          <Tab
+            borderRadius="5px 5px 0 0"
+            borderColor="lightgray"
+            mr={(2, 4, 6, 10)}
+            _hover={{
+              background: '#95c53e'
+            }}
+            _active={{
+              borderBottom: '4px solid #95c53e'
+            }}
+            _focus={{
+              borderBottom: '4px solid #95c53e'
+            }}>
+            To be received
+          </Tab>
+          <Tab
+            borderRadius="5px 5px 0 0"
+            borderColor="lightgray"
+            mr={(2, 4, 6, 10)}
+            _hover={{
+              background: '#95c53e'
+            }}
+            _active={{
+              borderBottom: '4px solid #95c53e'
+            }}
+            _focus={{
+              borderBottom: '4px solid #95c53e'
+            }}>
+            In Dispute
+          </Tab>
+          <Tab
+            borderRadius="5px 5px 0 0"
+            borderColor="lightgray"
+            mr={(2, 4, 6, 10)}
+            _hover={{
+              background: '#95c53e'
+            }}
+            _active={{
+              borderBottom: '4px solid #95c53e'
+            }}
+            _focus={{
+              borderBottom: '4px solid #95c53e'
+            }}>
+            Completed/Closed
+          </Tab>
+        </Flex>
       </TabList>
       <TabPanels p="30px" display="flex" justifyContent="center" w="100%">
         <TabPanel>
