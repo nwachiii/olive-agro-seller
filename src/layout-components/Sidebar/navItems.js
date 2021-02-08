@@ -71,7 +71,7 @@ export default [
       {
         "label": "Draft",
         "description": "Basic and dynamic pagination for use in your next awesome application.",
-        "to": "/Pagination"
+        "to": "/Home"
       }
     ]
   },
@@ -93,7 +93,7 @@ export default [
       {
         "label": "All Transactions",
         "description": "Wide selection of cards with multiple styles, borders, actions and hover effects.",
-        "to": "/Cards3"
+        "to": "/AllOrders"
       }
     ]
   },
@@ -104,7 +104,7 @@ export default [
       {
         "label": "Reviews",
         "description": "",
-        "to": "/LandingPage"
+        "to": "/AllOrders"
       }
     ]
   },
@@ -116,28 +116,12 @@ export default [
       {
         "label": "Overview",
         "description": "Tables are the backbone of almost all web applications.",
-        "to": "/RegularTables1"
-      },
-      {
-        "label": "Tables examples 4",
-        "description": "Tables are the backbone of almost all web applications.",
-        "to": "/RegularTables4"
-      }
-    ]
-  },
-  {
-    "label": "Transaction Report",
-    "icon": "ChatIcon",
-    "content": [
-      {
-        "label": "Apex Charts",
-        "description": "Wonderful animated charts built with ApexCharts components.",
-        "to": "/ApexCharts"
+        "to": "/Home"
       },
       {
         "label": "Wire Transfer",
         "description": "These can be used with other components and elements to create stunning and unique new elements for your UIs.",
-        "to": "/ListGroups"
+        "to": "/Orders"
       }
     ]
   }
