@@ -23,11 +23,9 @@ import Icons from './example-pages/Icons';
 import UtilitiesHelpers from './example-pages/UtilitiesHelpers';
 import RegularTables1 from './example-pages/RegularTables1';
 import RegularTables4 from './example-pages/RegularTables4';
-import FormsControls from './example-pages/FormsControls';
+import AllOrders from './layout-components/OliveOrders/AllOrders';
 
-const DashboardDefault = lazy(() =>
-  import('./layout-components/DashboardDefault')
-);
+const Home = lazy(() => import('./layout-components/Home'));
 const Cards3 = lazy(() => import('./example-components/Cards3'));
 const LandingPage = lazy(() => import('./example-pages/LandingPage'));
 const Accordions = lazy(() => import('./example-pages/Accordions'));
@@ -75,7 +73,7 @@ const Routes = () => {
             </div>
           }>
           <Switch>
-            <Redirect exact from="/" to="/DashboardDefault" />
+            <Redirect exact from="/" to="/Home" />
             <Route path={['/LandingPage']}>
               <PresentationLayout>
                 <Switch location={location} key={location.pathname}>
@@ -93,7 +91,7 @@ const Routes = () => {
 
             <Route
               path={[
-                '/DashboardDefault',
+                '/Home',
                 '/Buttons',
                 '/Dropdowns',
                 '/NavigationMenus',
@@ -111,7 +109,7 @@ const Routes = () => {
                 '/Tabs',
                 '/RegularTables1',
                 '/RegularTables4',
-                '/FormsControls',
+                '/AllOrders',
                 '/ApexCharts',
                 '/Maps',
                 '/ListGroups'
@@ -124,10 +122,7 @@ const Routes = () => {
                     exit="out"
                     variants={pageVariants}
                     transition={pageTransition}>
-                    <Route
-                      path="/DashboardDefault"
-                      component={DashboardDefault}
-                    />
+                    <Route path="/Home" component={Home} />
                     <Route path="/Buttons" component={Buttons} />
                     <Route path="/Dropdowns" component={Dropdowns} />
                     <Route
@@ -151,7 +146,7 @@ const Routes = () => {
                     <Route path="/Tabs" component={Tabs} />
                     <Route path="/RegularTables1" component={RegularTables1} />
                     <Route path="/RegularTables4" component={RegularTables4} />
-                    <Route path="/FormsControls" component={FormsControls} />
+                    <Route path="/AllOrders" component={AllOrders} />
                     <Route path="/ApexCharts" component={ApexCharts} />
                     <Route path="/Maps" component={Maps} />
                     <Route path="/ListGroups" component={ListGroups} />

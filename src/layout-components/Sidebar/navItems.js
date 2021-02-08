@@ -50,7 +50,7 @@ export default [
       {
         "label": "Home",
         "description": "This is a dashboard page example built using this template.",
-        "to": "/DashboardDefault"
+        "to": "/Home"
       }
     ]
   },
@@ -72,16 +72,17 @@ export default [
         "label": "Draft",
         "description": "Basic and dynamic pagination for use in your next awesome application.",
         "to": "/Pagination"
-      },
+      }
+    ]
+  },
+  {
+    "label": "Orders",
+    "icon": "BarChartIcon",
+    "content": [
       {
-        "label": "Navigation menus",
-        "description": "Navigation menus are one of the basic building blocks for any web or mobile app.",
-        "to": "/NavigationMenus"
-      },
-      {
-        "label": "Utilities & Helpers",
-        "description": "These are helpers that speed up the dev time for various components and effects.",
-        "to": "/UtilitiesHelpers"
+        "label": "All Orders",
+        "description": "Wide selection of forms controls, using a standardised code base, specifically for React.",
+        "to": "/AllOrders"
       }
     ]
   },
@@ -121,17 +122,6 @@ export default [
         "label": "Tables examples 4",
         "description": "Tables are the backbone of almost all web applications.",
         "to": "/RegularTables4"
-      }
-    ]
-  },
-  {
-    "label": "Orders",
-    "icon": "BarChartIcon",
-    "content": [
-      {
-        "label": "Controls",
-        "description": "Wide selection of forms controls, using a standardised code base, specifically for React.",
-        "to": "/FormsControls"
       }
     ]
   },

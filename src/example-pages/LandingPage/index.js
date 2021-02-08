@@ -48,7 +48,7 @@ const LandingPage = () => {
                       <div className="divider border-2 border-light my-5 border-light opacity-2 mx-auto rounded-circle w-50" />
                       <div>
                         <Button
-                          to="/DashboardDefault"
+                          to="/Home"
                           component={Link}
                           size="large"
                           color="primary"

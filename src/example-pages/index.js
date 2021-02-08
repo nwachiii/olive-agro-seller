@@ -1,4 +1,4 @@
-export { default as DashboardDefault } from '../layout-components/DashboardDefault';
+export { default as Home } from '../layout-components/Home';
 export { default as Buttons } from './Buttons';
 export { default as Dropdowns } from './Dropdowns';
 export { default as NavigationMenus } from './NavigationMenus';
@@ -17,7 +17,7 @@ export { default as Popovers } from './Popovers';
 export { default as Tabs } from './Tabs';
 export { default as RegularTables1 } from './RegularTables1';
 export { default as RegularTables4 } from './RegularTables4';
-export { default as FormsControls } from './FormsControls';
+export { default as AllOrders } from './AllOrders';
 export { default as ApexCharts } from './ApexCharts';
 export { default as Maps } from './Maps';
 export { default as ListGroups } from './ListGroups';

@@ -7,7 +7,7 @@ import PaginationBasic from '../../example-components/Pagination/PaginationBasic
 import HomeFirstCard from '../Cards/HomeFirstCard';
 import OtherHomeCards from '../Cards/OtherHomeCards';
 
-export default function DashboardDefault() {
+export default function Home() {
   return (
     <Fragment>
       <PageTitle
