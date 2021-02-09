@@ -18,6 +18,7 @@ export { default as Tabs } from './Tabs';
 export { default as RegularTables1 } from './RegularTables1';
 export { default as RegularTables4 } from './RegularTables4';
 export { default as AllOrders } from './AllOrders';
+export { default as FruitsVeg } from './FruitsVeg';
 export { default as ApexCharts } from './ApexCharts';
 export { default as Maps } from './Maps';
 export { default as ListGroups } from './ListGroups';

@@ -24,6 +24,7 @@ import UtilitiesHelpers from './example-pages/UtilitiesHelpers';
 import RegularTables1 from './example-pages/RegularTables1';
 import RegularTables4 from './example-pages/RegularTables4';
 import AllOrders from './layout-components/OliveOrders/AllOrders';
+import FruitsVeg from './layout-components/Products/FruitsVeg';
 
 const Home = lazy(() => import('./layout-components/Home'));
 const Cards3 = lazy(() => import('./example-components/Cards3'));
@@ -58,7 +59,7 @@ const Routes = () => {
   const pageTransition = {
     type: 'tween',
     ease: 'anticipate',
-    duration: 0.4
+    duration: 0.7
   };
 
   return (
@@ -98,6 +99,7 @@ const Routes = () => {
                 '/ProgressBars',
                 '/Pagination',
                 '/Inbox',
+                '/FruitsVeg',
                 '/Badges',
                 '/Icons',
                 '/UtilitiesHelpers',
@@ -147,6 +149,7 @@ const Routes = () => {
                     <Route path="/RegularTables1" component={RegularTables1} />
                     <Route path="/RegularTables4" component={RegularTables4} />
                     <Route path="/AllOrders" component={AllOrders} />
+                    <Route path="/FruitsVeg" component={FruitsVeg} />
                     <Route path="/ApexCharts" component={ApexCharts} />
                     <Route path="/Maps" component={Maps} />
                     <Route path="/ListGroups" component={ListGroups} />
