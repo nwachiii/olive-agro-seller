@@ -63,15 +63,10 @@ export default [
         "description": "All your received messages are contained here...",
         "to": "/Inbox"
       },
-              {
+      {
         "label": "Sent Messages",
         "description": "Add scrolling areas to any elements with custom scrollbars or default browser ones.",
         "to": "/Inbox"
-      },
-      {
-        "label": "Draft",
-        "description": "Basic and dynamic pagination for use in your next awesome application.",
-        "to": "/Home"
       }
     ]
   },
@@ -85,43 +80,45 @@ export default [
         "to": "/AllOrders"
       }
     ]
-  },
-  {
-    "label": "Transactions",
-    "icon": "ViewModuleIcon",
-    "content": [
-      {
-        "label": "All Transactions",
-        "description": "Wide selection of cards with multiple styles, borders, actions and hover effects.",
-        "to": "/AllOrders"
-      }
-    ]
-  },
-  {
-    "label": "Contacts",
-    "icon": "ErrorIcon",
-    "content": [
-      {
-        "label": "Reviews",
-        "description": "",
-        "to": "/AllOrders"
-      }
-    ]
-  },
-
+  },  
   {
     "label": "Products",
     "icon": "CodeIcon",
     "content": [
       {
-        "label": "Latest Products",
+        "label": "Fruits and Vegetables",
         "description": "",
-        "to": "/Home"
+        "to": "/FruitsVeg"
       },
       {
-        "label": "My Products",
+        "label": "Spices",
         "description": "",
-        "to": "/Orders"
+        "to": "/Spices"
+      },
+      {
+        "label": "Drinks",
+        "description": "",
+        "to": "/Drinks"
+      },
+      {
+        "label": "Dry Herbs",
+        "description": "",
+        "to": "/DryHerb"
+      },
+      {
+        "label": "Legumes",
+        "description": "",
+        "to": "/Legumes"
+      },
+      {
+        "label": "Oils",
+        "description": "",
+        "to": "/Oils"
+      },
+      {
+        "label": "Flours",
+        "description": "",
+        "to": "/Flours"
       }
     ]
   }

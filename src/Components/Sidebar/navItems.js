@@ -67,11 +67,6 @@ export default [
         "label": "Sent Messages",
         "description": "Add scrolling areas to any elements with custom scrollbars or default browser ones.",
         "to": "/Inbox"
-      },
-      {
-        "label": "Draft",
-        "description": "Basic and dynamic pagination for use in your next awesome application.",
-        "to": "/Home"
       }
     ]
   },
@@ -86,14 +81,19 @@ export default [
       }
     ]
   },
-  {
-    "label": "Transactions",
-    "icon": "ViewModuleIcon",
+   {
+    "label": "Products",
+    "icon": "CodeIcon",
     "content": [
       {
-        "label": "All Transactions",
-        "description": "Wide selection of cards with multiple styles, borders, actions and hover effects.",
-        "to": "/AllOrders"
+        "label": "Latest Products",
+        "description": "",
+        "to": "/Home"
+      },
+      {
+        "label": "My ",
+        "description": "",
+        "to": "/Orders"
       }
     ]
   },
@@ -109,22 +109,7 @@ export default [
     ]
   },
 
-  {
-    "label": "Products",
-    "icon": "CodeIcon",
-    "content": [
-      {
-        "label": "Latest Products",
-        "description": "",
-        "to": "/Home"
-      },
-      {
-        "label": "My Products",
-        "description": "",
-        "to": "/Orders"
-      }
-    ]
-  }
+
 ]`,
       (key, value) => {
         if (key === 'icon') {
