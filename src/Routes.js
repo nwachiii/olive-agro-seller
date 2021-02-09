@@ -25,6 +25,12 @@ import RegularTables1 from './example-pages/RegularTables1';
 import RegularTables4 from './example-pages/RegularTables4';
 import AllOrders from './layout-components/OliveOrders/AllOrders';
 import FruitsVeg from './layout-components/Products/FruitsVeg';
+import Drinks from './layout-components/Products/Drinks';
+import Spices from './layout-components/Products/Spices';
+import DryHerbs from './layout-components/Products/DryHerbs';
+import Legumes from './layout-components/Products/Legumes';
+import Flours from './layout-components/Products/Flours';
+import Oils from './layout-components/Products/Oils';
 
 const Home = lazy(() => import('./layout-components/Home'));
 const Cards3 = lazy(() => import('./example-components/Cards3'));
@@ -96,25 +102,19 @@ const Routes = () => {
                 '/Buttons',
                 '/Dropdowns',
                 '/NavigationMenus',
-                '/ProgressBars',
                 '/Pagination',
                 '/Inbox',
                 '/FruitsVeg',
-                '/Badges',
-                '/Icons',
-                '/UtilitiesHelpers',
-                '/Cards3',
-                '/Accordions',
-                '/Modals',
+                '/Spices',
+                '/Drinks',
+                '/DryHerbs',
+                '/Legumes',
+                '/Oils',
+                '/Flours',
                 '/Notifications',
                 '/Popovers',
                 '/Tabs',
-                '/RegularTables1',
-                '/RegularTables4',
-                '/AllOrders',
-                '/ApexCharts',
-                '/Maps',
-                '/ListGroups'
+                '/AllOrders'
               ]}>
               <LeftSidebar>
                 <Switch location={location} key={location.pathname}>
@@ -150,6 +150,12 @@ const Routes = () => {
                     <Route path="/RegularTables4" component={RegularTables4} />
                     <Route path="/AllOrders" component={AllOrders} />
                     <Route path="/FruitsVeg" component={FruitsVeg} />
+                    <Route path="/Spices" component={Spices} />
+                    <Route path="/Drinks" component={Drinks} />
+                    <Route path="/DryHerbs" component={DryHerbs} />
+                    <Route path="/Legumes" component={Legumes} />
+                    <Route path="/Oils" component={Oils} />
+                    <Route path="/Flours" component={Flours} />
                     <Route path="/ApexCharts" component={ApexCharts} />
                     <Route path="/Maps" component={Maps} />
                     <Route path="/ListGroups" component={ListGroups} />
