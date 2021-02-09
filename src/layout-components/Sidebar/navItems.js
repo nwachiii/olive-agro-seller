@@ -103,7 +103,7 @@ export default [
       {
         "label": "Dry Herbs",
         "description": "",
-        "to": "/DryHerb"
+        "to": "/DryHerbs"
       },
       {
         "label": "Legumes",
