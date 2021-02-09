@@ -1,5 +1,11 @@
 //
-import { Grid, Card, CardContent, Button } from '@material-ui/core';
+import {
+  Grid,
+  Card,
+  CardContent,
+  Button,
+  ButtonGroup
+} from '@material-ui/core';
 import React from 'react';
 
 import stock1 from '../../assets/images/stock-photos/stock-1.jpg';
@@ -16,14 +22,14 @@ function ShowProducts({ products }) {
                 {product.title}
               </h5>
               <p className="card-text">{product.category}</p>
-              <div className="display-flex justify-content-space-between">
-                <p className="card-text">
-                  PRICE: <strong>{product.price}</strong>
-                </p>
+              <p className="card-text">
+                PRICE: <strong>{product.price}</strong>
+              </p>
+              <ButtonGroup>
                 <Button color="secondary" size="large" variant="contained">
                   Add to Cart
                 </Button>
-              </div>
+              </ButtonGroup>
             </CardContent>
           </Card>
         </Grid>
