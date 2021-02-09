@@ -18,7 +18,7 @@ function ShowProducts({ products }) {
           <Card className="mb-4">
             <img alt={product.title} className="card-img-top" src={stock1} />
             <CardContent className="p-3">
-              <h5 className="card-title font-weight-bold font-size-lg">
+              <h5 className="card-title font-weight-bold font-size-lg flex-wrap">
                 {product.title}
               </h5>
               <p className="card-text">{product.category}</p>
