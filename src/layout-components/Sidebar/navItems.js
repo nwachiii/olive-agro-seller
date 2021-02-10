@@ -132,9 +132,9 @@ export default [
         "to": "/Vendors"
       },
       {
-        "label": "Users",
+        "label": "Customers",
         "description": "Wide selection of forms controls, using a standardised code base, specifically for React.",
-        "to": "/All users"
+        "to": "/Customers"
       }
     ]
   } 
