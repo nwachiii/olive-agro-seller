@@ -43,7 +43,7 @@ export default function OtherHomeCards() {
                 <p>
                   <strong>{data.responseText}</strong>
                 </p>
-                <p className="text-black-50">{data.responseDescription}</p>
+                <p className="text-black-80">{data.responseDescription}</p>
                 <a href="/#">
                   <Button
                     size="md"

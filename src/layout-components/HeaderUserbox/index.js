@@ -68,7 +68,7 @@ export default function HeaderUserbox() {
               <div className="font-weight-bold text-center pt-2 pb-1 line-height-1">
                 Daudu Gbenga
               </div>
-              <span className="text-black-50 text-center pt-2">
+              <span className="text-black-80 text-center pt-2">
                 Agrigultural Engineer
               </span>
             </div>
@@ -79,16 +79,6 @@ export default function HeaderUserbox() {
             <Divider className="w-100 my-2" />
             <ListItem button>Settings</ListItem>
             <ListItem button>Log out</ListItem>
-
-            {/* <ListItem className="d-block rounded-bottom px-3 pt-3 pb-0 text-center">
-              <Tooltip arrow title="Twitter">
-                <Button color="default" className="text-twitter">
-                  <span className="btn-wrapper--icon">
-                    <FontAwesomeIcon icon={['fab', 'twitter']} />
-                  </span>
-                </Button>
-              </Tooltip>
-            </ListItem> */}
           </List>
         </div>
       </Menu>

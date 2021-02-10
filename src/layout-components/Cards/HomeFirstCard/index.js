@@ -28,7 +28,7 @@ export default function HomeFirstCard() {
               <div className="flex-grow-1 mt-4">
                 <h1 className="text-black-40">Daudu</h1>
                 <a className="text-black-50 pt-2" href="/#">
-                  View Profile
+                  <h5>View Profile</h5>
                 </a>
               </div>
             </div>
