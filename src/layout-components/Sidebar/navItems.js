@@ -121,7 +121,23 @@ export default [
         "to": "/Flours"
       }
     ]
-  }
+  },
+  {
+    "label": "View Users",
+    "icon": "BarChartIcon",
+    "content": [
+      {
+        "label": "Vendors",
+        "description": "Wide selection of forms controls, using a standardised code base, specifically for React.",
+        "to": "/Vendors"
+      },
+      {
+        "label": "Users",
+        "description": "Wide selection of forms controls, using a standardised code base, specifically for React.",
+        "to": "/All users"
+      }
+    ]
+  } 
 ]`,
       (key, value) => {
         if (key === 'icon') {
