@@ -24,19 +24,21 @@ export default function HeaderUserbox() {
     setAnchorEl(null);
   };
 
+  const userName = 'Daudu Gbenga';
   return (
     <Fragment>
       <Button
         color="inherit"
         onClick={handleClick}
         className="text-capitalize px-3 text-left btn-inverse d-flex align-items-center">
-        <Box>
+        <Box className="d-flex flex-wrap">
+          <h6 className="text-white-80 text-center my-auto mr-2">
+            Hi, {userName}{' '}
+          </h6>
           <Avatar sizes="44" alt="Daudu Gbenga" src={Avatar} />
         </Box>
         <div className="d-none d-xl-block pl-3">
-          <div className="font-weight-bold pt-2 line-height-1">
-            Daudu Gbenga
-          </div>
+          <div className="font-weight-bold pt-2 line-height-1">{userName}</div>
           <span className="text-white-50">Agricultural Engineer</span>
         </div>
         <span className="pl-1 pl-xl-3">
@@ -66,10 +68,10 @@ export default function HeaderUserbox() {
             </Box>
             <div className="pl-3  pr-3">
               <div className="font-weight-bold text-center pt-2 pb-1 line-height-1">
-                Daudu Gbenga
+                {userName}
               </div>
               <span className="text-black-80 text-center pt-2">
-                Agrigultural Engineer
+                Agricultural Engineer
               </span>
             </div>
             <Divider className="w-100 mt-2" />
