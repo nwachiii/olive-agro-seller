@@ -9,7 +9,8 @@ import {
   Button,
   List,
   ListItem,
-  Divider
+  Divider,
+  Hidden
 } from '@material-ui/core';
 
 // import avatar5 from '../../assets/images/avatars/avatar5.jpg';
@@ -32,9 +33,11 @@ export default function HeaderUserbox() {
         onClick={handleClick}
         className="text-capitalize px-3 text-left btn-inverse d-flex align-items-center">
         <Box className="d-flex flex-wrap">
-          <h6 className="text-white-80 text-center my-auto mr-2">
-            Hi, {userName}{' '}
-          </h6>
+          <Hidden smDown>
+            <h6 className="text-white-80 text-center my-auto mx-3">
+              Hi, {userName}{' '}
+            </h6>
+          </Hidden>
           <Avatar sizes="44" alt="Daudu Gbenga" src={Avatar} />
         </Box>
         <div className="d-none d-xl-block pl-3">

@@ -20,6 +20,7 @@ body {
   .app-header-logo-img {
     width: 32px;
     height: 32px;
+    // background-color: white;
   }
 
   .header-logo-wrapper {
@@ -30,10 +31,10 @@ body {
   .header-logo-wrapper-btn {
     padding: ($spacer / 3);
     color: $white;
-    background: rgba(255,255,255,.09);
+    background: white;
 
     &:hover {
-      background: rgba(255,255,255,.14);
+      background: rgba(248, 244, 244, 0.1);
     }
   }
 
