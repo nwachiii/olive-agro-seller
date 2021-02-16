@@ -115,7 +115,7 @@ export default [
       {
         "label": "Registered Vendors",
         "description": "",
-        "to": "/Vendors"
+        "to": "/RegisteredVendors"
       },
       {
         "label": "Pending Vendors",

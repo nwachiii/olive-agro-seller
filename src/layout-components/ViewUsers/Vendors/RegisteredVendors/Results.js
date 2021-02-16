@@ -109,7 +109,7 @@ const Results = ({ className, RegisteredVendors, ...rest }) => {
                 </TableCell>
                 <TableCell>Company name</TableCell>
                 <TableCell>Company email</TableCell>
-                <TableCell>Adress</TableCell>
+                <TableCell>Address</TableCell>
                 <TableCell>Phone</TableCell>
                 <TableCell>Others</TableCell>
               </TableRow>
@@ -144,13 +144,13 @@ const Results = ({ className, RegisteredVendors, ...rest }) => {
                         {getInitials(RegisteredVendor.name)}
                       </Avatar>
                       <Typography color="textPrimary" variant="body1">
-                        {RegisteredVendor.name}
+                        {RegisteredVendor.companyName}
                       </Typography>
                     </Box>
                   </TableCell>
-                  <TableCell>{RegisteredVendor.email}</TableCell>
-                  <TableCell>{RegisteredVendor.address.state}</TableCell>
-                  <TableCell>{RegisteredVendor.phone}</TableCell>
+                  <TableCell>{RegisteredVendor.companyEmail}</TableCell>
+                  <TableCell>{RegisteredVendor.companyAddress.state}</TableCell>
+                  <TableCell>{RegisteredVendor.phoneNumber}</TableCell>
                   <TableCell>
                     <Button color="secondary" variant="contained">
                       More info

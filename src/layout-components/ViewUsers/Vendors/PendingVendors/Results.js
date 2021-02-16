@@ -108,9 +108,9 @@ const Results = ({ className, props, PendingVendors, ...rest }) => {
                     onChange={handleSelectAll}
                   />
                 </TableCell>
-                <TableCell>Name</TableCell>
-                <TableCell>Email</TableCell>
-                <TableCell>Location</TableCell>
+                <TableCell>COmpany name</TableCell>
+                <TableCell>Company email</TableCell>
+                <TableCell>Address</TableCell>
                 <TableCell>Phone</TableCell>
                 {/* <TableCell>Registration date</TableCell> */}
                 <TableCell>Approve/Decline</TableCell>
@@ -144,13 +144,13 @@ const Results = ({ className, props, PendingVendors, ...rest }) => {
                         {getInitials(PendingVendor.name)}
                       </Avatar>
                       <Typography color="textPrimary" variant="body1">
-                        {PendingVendor.name}
+                        {PendingVendor.companyName}
                       </Typography>
                     </Box>
                   </TableCell>
-                  <TableCell>{PendingVendor.email}</TableCell>
-                  <TableCell>{PendingVendor.address.state}</TableCell>
-                  <TableCell>{PendingVendor.phone}</TableCell>
+                  <TableCell>{PendingVendor.companyEmail}</TableCell>
+                  <TableCell>{PendingVendor.companyAddress.state}</TableCell>
+                  <TableCell>{PendingVendor.phoneNumber}</TableCell>
                   {/* <TableCell>
                     {moment(PendingVendor.createdAt).format('DD/MM/YYYY')}
                   </TableCell> */}
