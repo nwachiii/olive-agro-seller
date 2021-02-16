@@ -33,6 +33,8 @@ import Flours from './layout-components/Products/Flours';
 import Oils from './layout-components/Products/Oils';
 import Vendors from './layout-components/ViewUsers/Vendors';
 import Customers from './layout-components/ViewUsers/Customers';
+import PendingVendors from './layout-components/ViewUsers/Vendors/PendingVendors';
+import RegisteredVendors from './layout-components/ViewUsers/Vendors/RegisteredVendors';
 
 const Home = lazy(() => import('./layout-components/Home'));
 const Cards3 = lazy(() => import('./example-components/Cards3'));
@@ -114,6 +116,8 @@ const Routes = () => {
                 '/Oils',
                 '/Flours',
                 '/Vendors',
+                '/PendingVendors',
+                '/RegisteredVendors',
                 '/Customers',
                 '/Notifications',
                 '/Popovers',
@@ -161,6 +165,11 @@ const Routes = () => {
                     <Route path="/Oils" component={Oils} />
                     <Route path="/Flours" component={Flours} />
                     <Route path="/Vendors" component={Vendors} />
+                    <Route path="/PendingVendors" component={PendingVendors} />
+                    <Route
+                      path="/RegisteredVendors"
+                      component={RegisteredVendors}
+                    />
                     <Route path="/Customers" component={Customers} />
                     <Route path="/ApexCharts" component={ApexCharts} />
                     <Route path="/Maps" component={Maps} />

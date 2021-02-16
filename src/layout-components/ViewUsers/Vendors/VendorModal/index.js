@@ -6,6 +6,7 @@ import {
   DialogTitle,
   Button
 } from '@material-ui/core';
+import VendorInfo from '../VendorInfo';
 
 function VendorModal(Props) {
   const {
@@ -30,9 +31,7 @@ function VendorModal(Props) {
           id="scroll-dialog-description"
           ref={descriptionElementRef}
           tabIndex={2}>
-          {[...new Array(10)]
-            .map(() => 'All vendor information comes in here.\n')
-            .join('\n')}
+          <VendorInfo />
         </DialogContentText>
       </DialogContent>
       <DialogActions className="justify-content-center flex-wrap">

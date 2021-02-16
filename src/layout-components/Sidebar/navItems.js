@@ -45,14 +45,7 @@ export default [
       `[
   {
     "label": "Home",
-    "icon": "DashboardTwoToneIcon",
-    "content": [
-      {
-        "label": "Home",
-        "description": "This is a dashboard page example built using this template.",
-        "to": "/Home"
-      }
-    ]
+    "to": "/Home"
   },
   {
     "label": "Messages",
@@ -65,21 +58,14 @@ export default [
       },
       {
         "label": "Sent Messages",
-        "description": "Add scrolling areas to any elements with custom scrollbars or default browser ones.",
+        "description": "",
         "to": "/Inbox"
       }
     ]
   },
   {
-    "label": "Orders",
-    "icon": "BarChartIcon",
-    "content": [
-      {
-        "label": "All Orders",
-        "description": "Wide selection of forms controls, using a standardised code base, specifically for React.",
-        "to": "/AllOrders"
-      }
-    ]
+    "label": "All Orders",
+    "to": "/AllOrders"
   },  
   {
     "label": "Products",
@@ -123,20 +109,24 @@ export default [
     ]
   },
   {
-    "label": "View Users",
+    "label": "Vendors",
     "icon": "BarChartIcon",
     "content": [
       {
-        "label": "Vendors",
-        "description": "Wide selection of forms controls, using a standardised code base, specifically for React.",
+        "label": "Registered Vendors",
+        "description": "",
         "to": "/Vendors"
       },
       {
-        "label": "Customers",
-        "description": "Wide selection of forms controls, using a standardised code base, specifically for React.",
-        "to": "/Customers"
+        "label": "Pending Vendors",
+        "description": "",
+        "to": "/PendingVendors"
       }
     ]
+  }, 
+  {
+        "label": "Customers",
+        "to": "/Customers"
   } 
 ]`,
       (key, value) => {
