@@ -68,7 +68,7 @@ export default [
     "to": "/AllOrders"
   },  
   {
-    "label": "Products",
+    "label": "Categories",
     "icon": "CodeIcon",
     "content": [
       {
@@ -77,39 +77,9 @@ export default [
         "to": "/AddCategory"
       },
       {
-        "label": "Fruits and Vegetables",
+        "label": "See all categories",
         "description": "",
-        "to": "/FruitsVeg"
-      },
-      {
-        "label": "Spices",
-        "description": "",
-        "to": "/Spices"
-      },
-      {
-        "label": "Drinks",
-        "description": "",
-        "to": "/Drinks"
-      },
-      {
-        "label": "Dry Herbs",
-        "description": "",
-        "to": "/DryHerbs"
-      },
-      {
-        "label": "Legumes",
-        "description": "",
-        "to": "/Legumes"
-      },
-      {
-        "label": "Oils",
-        "description": "",
-        "to": "/Oils"
-      },
-      {
-        "label": "Flours",
-        "description": "",
-        "to": "/Flours"
+        "to": "/SeeAllCategories"
       }
     ]
   },

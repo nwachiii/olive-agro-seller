@@ -22,7 +22,8 @@ import UtilitiesHelpers from './example-pages/UtilitiesHelpers';
 import RegularTables1 from './example-pages/RegularTables1';
 import RegularTables4 from './example-pages/RegularTables4';
 import AllOrders from './layout-components/OliveOrders/AllOrders';
-import AddCategory from './layout-components/Products/AddCategory';
+import AddCategory from './layout-components/Products/Categories/AddCategory';
+import SeeAllCategories from './layout-components/Products/Categories/SeeAllCategories';
 import FruitsVeg from './layout-components/Products/FruitsVeg';
 import Drinks from './layout-components/Products/Drinks';
 import Spices from './layout-components/Products/Spices';
@@ -107,6 +108,7 @@ const Routes = () => {
                 '/Pagination',
                 '/Inbox',
                 '/AddCategory',
+                '/SeeAllCategories',
                 '/FruitsVeg',
                 '/Spices',
                 '/Drinks',
@@ -154,6 +156,10 @@ const Routes = () => {
                     <Route path="/RegularTables4" component={RegularTables4} />
                     <Route path="/AllOrders" component={AllOrders} />
                     <Route path="/AddCategory" component={AddCategory} />
+                    <Route
+                      path="/SeeAllCategories"
+                      component={SeeAllCategories}
+                    />
                     <Route path="/FruitsVeg" component={FruitsVeg} />
                     <Route path="/Spices" component={Spices} />
                     <Route path="/Drinks" component={Drinks} />

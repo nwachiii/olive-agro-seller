@@ -3,7 +3,6 @@ import PropTypes from 'prop-types';
 import clsx from 'clsx';
 import {
   Box,
-  Button,
   Card,
   CardContent,
   TextField,
@@ -29,11 +28,11 @@ const Toolbar = ({ componentTitle, className, ...rest }) => {
   return (
     <div className={clsx(classes.root, className)} {...rest}>
       <Box display="flex" justifyContent="flex-end" flexWrap="wrap-reverse">
-        <Button className={classes.importButton}>Import</Button>
+        {/* <Button className={classes.importButton}>Import</Button>
         <Button className={classes.exportButton}>Export</Button>
         <Button color="secondary" variant="contained">
           Add {componentTitle}
-        </Button>
+        </Button> */}
       </Box>
       <Box mt={3}>
         <Card>

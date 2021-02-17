@@ -21,7 +21,6 @@ const Customers = () => {
   return (
     <Page className={classes.root} title="Customers">
       <Container maxWidth={false}>
-        <Toolbar componentTitle="Customers" />
         <Box mt={3}>
           <Results customers={customers} />
         </Box>
