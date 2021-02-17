@@ -38,7 +38,7 @@ function AddCategory() {
                 />
                 <Button
                   className="px-6 mx-auto my-3"
-                  size="lg"
+                  size="xl"
                   variant="contained"
                   type="submit"
                   style={{ color: 'white', backgroundColor: '#0e9146' }}>

@@ -13,9 +13,7 @@ import { LeftSidebar, PresentationLayout } from './layout-blueprints';
 // Example Pages
 
 import Buttons from './example-pages/Buttons';
-import Dropdowns from './example-pages/Dropdowns';
 import NavigationMenus from './example-pages/NavigationMenus';
-import ProgressBars from './example-pages/ProgressBars';
 import Pagination from './example-pages/Pagination';
 import Inbox from './layout-components/Inbox';
 import Badges from './example-pages/Badges';
@@ -134,12 +132,10 @@ const Routes = () => {
                     transition={pageTransition}>
                     <Route path="/Home" component={Home} />
                     <Route path="/Buttons" component={Buttons} />
-                    <Route path="/Dropdowns" component={Dropdowns} />
                     <Route
                       path="/NavigationMenus"
                       component={NavigationMenus}
                     />
-                    <Route path="/ProgressBars" component={ProgressBars} />
                     <Route path="/Pagination" component={Pagination} />
                     <Route path="/Inbox" component={Inbox} />
                     <Route path="/Badges" component={Badges} />

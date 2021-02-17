@@ -3,8 +3,6 @@ import React, { Fragment } from 'react';
 import { PageTitle } from '../../layout-components';
 import { Grid } from '@material-ui/core';
 
-import DropdownsBasic from '../../example-components/Dropdowns/DropdownsBasic';
-import DropdownsSplit from '../../example-components/Dropdowns/DropdownsSplit';
 export default function Dropdowns() {
   return (
     <Fragment>

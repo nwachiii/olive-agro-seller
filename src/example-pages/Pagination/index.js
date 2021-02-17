@@ -2,7 +2,6 @@ import React, { Fragment } from 'react';
 
 import { PageTitle } from '../../layout-components';
 
-import PaginationBasic from '../../example-components/Pagination/PaginationBasic';
 export default function Pagination() {
   return (
     <Fragment>

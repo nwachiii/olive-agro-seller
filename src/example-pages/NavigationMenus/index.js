@@ -2,7 +2,6 @@ import React, { Fragment } from 'react';
 
 import { PageTitle } from '../../layout-components';
 
-import NavigationMenusVerticalBasic from '../../example-components/NavigationMenus/NavigationMenusVerticalBasic';
 export default function NavigationMenus() {
   return (
     <Fragment>
