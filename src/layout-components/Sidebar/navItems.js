@@ -40,7 +40,7 @@ var iconsMap = {
 
 export default [
   {
-    label: '',
+    label: 'Sidebar navigation',
     content: JSON.parse(
       `[
   {
