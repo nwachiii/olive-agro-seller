@@ -2,7 +2,6 @@ import React, { Fragment } from 'react';
 
 import { PageTitle } from '../../layout-components';
 
-import ModalsBasic from '../../example-components/Modals/ModalsBasic';
 export default function Modals() {
   return (
     <Fragment>

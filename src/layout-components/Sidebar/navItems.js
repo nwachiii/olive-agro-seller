@@ -40,7 +40,7 @@ var iconsMap = {
 
 export default [
   {
-    label: 'Navigation menu',
+    label: '',
     content: JSON.parse(
       `[
   {
@@ -71,6 +71,11 @@ export default [
     "label": "Products",
     "icon": "CodeIcon",
     "content": [
+      {
+        "label": "Add Category + ",
+        "description": "",
+        "to": "/AddCategory"
+      },
       {
         "label": "Fruits and Vegetables",
         "description": "",
