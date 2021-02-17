@@ -16,9 +16,11 @@ import {
   TableRow,
   Typography,
   makeStyles,
-  Button
+  Button,
+  DialogContentText
 } from '@material-ui/core';
 import getInitials from '../../../../utils/getInitials';
+import { VendorModal } from '../VendorModal';
 
 const useStyles = makeStyles(theme => ({
   root: {},
@@ -35,6 +37,27 @@ const Results = ({ className, RegisteredVendors, ...rest }) => {
   ] = useState([]);
   const [limit, setLimit] = useState(10);
   const [page, setPage] = useState(0);
+  const [open3, setOpen3] = useState(false);
+  const [scroll, setScroll] = useState('paper');
+
+  const handleClickOpen3 = scrollType => () => {
+    setOpen3(true);
+    setScroll(scrollType);
+  };
+
+  const handleClose3 = () => {
+    setOpen3(false);
+  };
+
+  const descriptionElementRef = React.useRef(null);
+  React.useEffect(() => {
+    if (open3) {
+      const { current: descriptionElement } = descriptionElementRef;
+      if (descriptionElement !== null) {
+        descriptionElement.focus();
+      }
+    }
+  }, [open3]);
 
   const handleSelectAll = event => {
     let newSelectedRegisteredVendorIds;
@@ -111,7 +134,7 @@ const Results = ({ className, RegisteredVendors, ...rest }) => {
                 <TableCell>Company email</TableCell>
                 <TableCell>Address</TableCell>
                 <TableCell>Phone</TableCell>
-                <TableCell>Others</TableCell>
+                {/* <TableCell>Others</TableCell> */}
               </TableRow>
             </TableHead>
             <TableBody>
@@ -141,7 +164,7 @@ const Results = ({ className, RegisteredVendors, ...rest }) => {
                       <Avatar
                         className={classes.avatar}
                         src={RegisteredVendor.avatarUrl}>
-                        {getInitials(RegisteredVendor.name)}
+                        {getInitials(RegisteredVendor.companyName)}
                       </Avatar>
                       <Typography color="textPrimary" variant="body1">
                         {RegisteredVendor.companyName}
@@ -151,11 +174,24 @@ const Results = ({ className, RegisteredVendors, ...rest }) => {
                   <TableCell>{RegisteredVendor.companyEmail}</TableCell>
                   <TableCell>{RegisteredVendor.companyAddress.state}</TableCell>
                   <TableCell>{RegisteredVendor.phoneNumber}</TableCell>
-                  <TableCell>
-                    <Button color="secondary" variant="contained">
+                  {/* <TableCell>
+                    {
+                      <VendorModal
+                        open3={open3}
+                        handleClose3={handleClose3}
+                        scroll={scroll}
+                        DialogContentText={DialogContentText}
+                        descriptionElementRef={descriptionElementRef}
+                      />
+                    }
+                    <Button
+                      key={RegisteredVendor.id}
+                      onClick={handleClickOpen3('paper')}
+                      color="secondary"
+                      variant="contained">
                       More info
                     </Button>{' '}
-                  </TableCell>
+                  </TableCell> */}
                 </TableRow>
               ))}
             </TableBody>

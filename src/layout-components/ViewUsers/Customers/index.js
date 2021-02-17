@@ -2,7 +2,7 @@ import React, { useState } from 'react';
 import { Box, Container, makeStyles } from '@material-ui/core';
 import Page from '../../Page';
 import Results from './Results';
-import Toolbar from '../Toolbar';
+import Toolbar from '../../Toolbar';
 import data from './data';
 
 const useStyles = makeStyles(theme => ({

@@ -2,7 +2,7 @@ import React, { useState } from 'react';
 
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 
-import VendorModal from './VendorModal';
+import { VendorModal } from './VendorModal';
 
 import {
   Box,
@@ -13,7 +13,7 @@ import {
   DialogContentText
 } from '@material-ui/core';
 import Page from '../../Page';
-import Toolbar from '../Toolbar';
+import Toolbar from '../../Toolbar';
 
 const useStyles = makeStyles(theme => ({
   root: {

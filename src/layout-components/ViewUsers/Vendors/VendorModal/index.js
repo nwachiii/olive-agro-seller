@@ -8,7 +8,7 @@ import {
 } from '@material-ui/core';
 import VendorInfo from '../VendorInfo';
 
-function VendorModal(Props) {
+export const VendorModal = Props => {
   const {
     open3,
     handleClose3,
@@ -24,7 +24,7 @@ function VendorModal(Props) {
       aria-labelledby="scroll-dialog-title"
       aria-describedby="scroll-dialog-description">
       <DialogTitle id="scroll-dialog-title">
-        <h4 className="mb-0">Vendor Info</h4>
+        <h4 className="mb-0">Vendor Documents</h4>
       </DialogTitle>
       <DialogContent dividers={scroll === 'paper'}>
         <DialogContentText
@@ -35,15 +35,15 @@ function VendorModal(Props) {
         </DialogContentText>
       </DialogContent>
       <DialogActions className="justify-content-center flex-wrap">
-        <Button onClick={handleClose3} color="secondary" variant="contained">
+        {/* <div style={ToggleBtnDisplay}> */}
+        <Button onClick={handleClose3} color="primary" variant="contained">
           Accept
         </Button>
         <Button onClick={handleClose3} color="secondary" variant="contained">
           Decline
         </Button>
+        {/* </div> */}
       </DialogActions>
     </Dialog>
   );
-}
-
-export default VendorModal;
+};

@@ -1,7 +1,7 @@
 import React, { useState } from 'react';
 import { Box, Container, makeStyles } from '@material-ui/core';
 import Page from '../../../Page';
-import Toolbar from '../../Toolbar';
+import Toolbar from '../../../Toolbar';
 import Results from './Results';
 import data from './data';
 
@@ -19,9 +19,9 @@ const PendingVendors = () => {
   const [PendingVendors] = useState(data);
 
   return (
-    <Page className={classes.root} title="PendingVendors">
+    <Page className={classes.root} title="Pending Vendors">
       <Container maxWidth={false}>
-        <Toolbar componentTitle="PendingVendors" />
+        <Toolbar componentTitle="Pending Vendors" />
         <Box mt={3}>
           <Results PendingVendors={PendingVendors} />
         </Box>

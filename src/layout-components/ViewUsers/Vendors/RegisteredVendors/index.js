@@ -1,7 +1,7 @@
 import React, { useState } from 'react';
 import { Box, Container, makeStyles } from '@material-ui/core';
 import Page from '../../../Page';
-import Toolbar from '../../Toolbar';
+import Toolbar from '../../../Toolbar';
 import Results from './Results';
 import data from './data';
 
@@ -21,7 +21,7 @@ const RegisteredVendors = () => {
   return (
     <Page className={classes.root} title="Registered Vendors">
       <Container maxWidth={false}>
-        <Toolbar componentTitle="RegisteredVendors" />
+        <Toolbar componentTitle="Registered Vendors" />
         <Box mt={3}>
           <Results RegisteredVendors={RegisteredVendors} />
         </Box>

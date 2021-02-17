@@ -16,10 +16,11 @@ import {
   TableRow,
   Typography,
   makeStyles,
+  DialogContentText,
   Button
 } from '@material-ui/core';
 import getInitials from '../../../../utils/getInitials';
-import VendorModal from '../VendorModal';
+import { VendorModal } from '../VendorModal';
 
 const useStyles = makeStyles(theme => ({
   root: {},
@@ -28,16 +29,32 @@ const useStyles = makeStyles(theme => ({
   }
 }));
 
-const Results = ({ className, props, PendingVendors, ...rest }) => {
+const Results = ({ className, PendingVendors, ...rest }) => {
   const classes = useStyles();
   const [selectedPendingVendorIds, setSelectedPendingVendorIds] = useState([]);
   const [limit, setLimit] = useState(10);
   const [page, setPage] = useState(0);
-  const [showVendorInfo, setShowVendorInfo] = useState(false);
+  const [open3, setOpen3] = useState(false);
+  const [scroll, setScroll] = useState('paper');
 
-  const handleVendorInfo = () => {
-    return setShowVendorInfo(!showVendorInfo);
+  const handleClickOpen3 = scrollType => () => {
+    setOpen3(true);
+    setScroll(scrollType);
   };
+
+  const handleClose3 = () => {
+    setOpen3(false);
+  };
+
+  const descriptionElementRef = React.useRef(null);
+  React.useEffect(() => {
+    if (open3) {
+      const { current: descriptionElement } = descriptionElementRef;
+      if (descriptionElement !== null) {
+        descriptionElement.focus();
+      }
+    }
+  }, [open3]);
 
   const handleSelectAll = event => {
     let newSelectedPendingVendorIds;
@@ -108,11 +125,10 @@ const Results = ({ className, props, PendingVendors, ...rest }) => {
                     onChange={handleSelectAll}
                   />
                 </TableCell>
-                <TableCell>COmpany name</TableCell>
+                <TableCell>Company name</TableCell>
                 <TableCell>Company email</TableCell>
                 <TableCell>Address</TableCell>
                 <TableCell>Phone</TableCell>
-                {/* <TableCell>Registration date</TableCell> */}
                 <TableCell>Approve/Decline</TableCell>
               </TableRow>
             </TableHead>
@@ -141,7 +157,7 @@ const Results = ({ className, props, PendingVendors, ...rest }) => {
                       <Avatar
                         className={classes.avatar}
                         src={PendingVendor.avatarUrl}>
-                        {getInitials(PendingVendor.name)}
+                        {getInitials(PendingVendor.companyName)}
                       </Avatar>
                       <Typography color="textPrimary" variant="body1">
                         {PendingVendor.companyName}
@@ -151,13 +167,20 @@ const Results = ({ className, props, PendingVendors, ...rest }) => {
                   <TableCell>{PendingVendor.companyEmail}</TableCell>
                   <TableCell>{PendingVendor.companyAddress.state}</TableCell>
                   <TableCell>{PendingVendor.phoneNumber}</TableCell>
-                  {/* <TableCell>
-                    {moment(PendingVendor.createdAt).format('DD/MM/YYYY')}
-                  </TableCell> */}
+
                   <TableCell>
-                    {showVendorInfo ? null : <VendorModal />}
+                    {
+                      <VendorModal
+                        open3={open3}
+                        handleClose3={handleClose3}
+                        scroll={scroll}
+                        DialogContentText={DialogContentText}
+                        descriptionElementRef={descriptionElementRef}
+                      />
+                    }
                     <Button
-                      onClick={handleVendorInfo}
+                      key={PendingVendor.id}
+                      onClick={handleClickOpen3('paper')}
                       color="secondary"
                       variant="contained">
                       see more...
