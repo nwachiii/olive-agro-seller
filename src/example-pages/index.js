@@ -4,7 +4,7 @@ export { default as Dropdowns } from './Dropdowns';
 export { default as NavigationMenus } from './NavigationMenus';
 export { default as ProgressBars } from './ProgressBars';
 export { default as Pagination } from './Pagination';
-export { default as Inbox } from './Inbox';
+export { default as Inbox } from '../layout-components/Inbox';
 export { default as Badges } from './Badges';
 export { default as Icons } from './Icons';
 export { default as UtilitiesHelpers } from './UtilitiesHelpers';

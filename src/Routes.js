@@ -17,7 +17,7 @@ import Dropdowns from './example-pages/Dropdowns';
 import NavigationMenus from './example-pages/NavigationMenus';
 import ProgressBars from './example-pages/ProgressBars';
 import Pagination from './example-pages/Pagination';
-import Inbox from './example-pages/Inbox';
+import Inbox from './layout-components/Inbox';
 import Badges from './example-pages/Badges';
 import Icons from './example-pages/Icons';
 import UtilitiesHelpers from './example-pages/UtilitiesHelpers';
@@ -31,7 +31,6 @@ import DryHerbs from './layout-components/Products/DryHerbs';
 import Legumes from './layout-components/Products/Legumes';
 import Flours from './layout-components/Products/Flours';
 import Oils from './layout-components/Products/Oils';
-import Vendors from './layout-components/ViewUsers/Vendors';
 import Customers from './layout-components/ViewUsers/Customers';
 import PendingVendors from './layout-components/ViewUsers/Vendors/PendingVendors';
 import RegisteredVendors from './layout-components/ViewUsers/Vendors/RegisteredVendors';
@@ -115,7 +114,6 @@ const Routes = () => {
                 '/Legumes',
                 '/Oils',
                 '/Flours',
-                '/Vendors',
                 '/PendingVendors',
                 '/RegisteredVendors',
                 '/Customers',
@@ -164,7 +162,6 @@ const Routes = () => {
                     <Route path="/Legumes" component={Legumes} />
                     <Route path="/Oils" component={Oils} />
                     <Route path="/Flours" component={Flours} />
-                    <Route path="/Vendors" component={Vendors} />
                     <Route path="/PendingVendors" component={PendingVendors} />
                     <Route
                       path="/RegisteredVendors"

@@ -6,7 +6,7 @@ import {
   DialogTitle,
   Button
 } from '@material-ui/core';
-import VendorInfo from '../VendorInfo';
+import VendorInfo from './VendorInfo';
 
 export const VendorModal = Props => {
   const {

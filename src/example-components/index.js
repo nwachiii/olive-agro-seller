@@ -57,7 +57,6 @@ export { default as ProgressBarsCircular } from './ProgressBarsCircular';
 export { default as ProgressBarsMultiple } from './ProgressBarsMultiple';
 export { default as InboxBasic } from './InboxBasic';
 export { default as TabsBasic } from './TabsBasic';
-export { default as PopoversBasic } from './PopoversBasic';
 export { default as UtilitiesHelpersPrimaryColors } from './UtilitiesHelpersPrimaryColors';
 export { default as UtilitiesHelpersNeutralColors } from './UtilitiesHelpersNeutralColors';
 export { default as UtilitiesHelpersBrandColors } from './UtilitiesHelpersBrandColors';
