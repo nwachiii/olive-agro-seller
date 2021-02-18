@@ -106,6 +106,12 @@ const Results = ({ className, RegisteredVendors, ...rest }) => {
     setPage(newPage);
   };
 
+  //Registered vendor's status
+  const activeStatusClass =
+    'badge badge-success py-0 my-4 text-center  text-white';
+  const expiredStatusClass =
+    'h-auto py-0 badge badge-danger text-center text-white';
+
   return (
     <Card className={clsx(classes.root, className)} {...rest}>
       <PerfectScrollbar>
@@ -130,8 +136,10 @@ const Results = ({ className, RegisteredVendors, ...rest }) => {
                 </TableCell>
                 <TableCell>Company name</TableCell>
                 <TableCell>Company email</TableCell>
-                <TableCell>Address</TableCell>
+                <TableCell>City</TableCell>
+                <TableCell>Status</TableCell>
                 <TableCell>Phone</TableCell>
+                <TableCell>Address</TableCell>
                 {/* <TableCell>Others</TableCell> */}
               </TableRow>
             </TableHead>
@@ -171,25 +179,24 @@ const Results = ({ className, RegisteredVendors, ...rest }) => {
                   </TableCell>
                   <TableCell>{RegisteredVendor.companyEmail}</TableCell>
                   <TableCell>{RegisteredVendor.companyAddress.state}</TableCell>
+                  {RegisteredVendor.status == 'Active' ? (
+                    <div className="my-4 px-3">
+                      <TableCell className={activeStatusClass}>
+                        {RegisteredVendor.status}
+                      </TableCell>
+                    </div>
+                  ) : (
+                    <div className="my-4 px-3">
+                      <TableCell className={expiredStatusClass}>
+                        {RegisteredVendor.status}
+                      </TableCell>
+                    </div>
+                  )}
+
+                  <TableCell>
+                    {RegisteredVendor.companyAddress.street}
+                  </TableCell>
                   <TableCell>{RegisteredVendor.phoneNumber}</TableCell>
-                  {/* <TableCell>
-                    {
-                      <VendorModal
-                        open3={open3}
-                        handleClose3={handleClose3}
-                        scroll={scroll}
-                        DialogContentText={DialogContentText}
-                        descriptionElementRef={descriptionElementRef}
-                      />
-                    }
-                    <Button
-                      key={RegisteredVendor.id}
-                      onClick={handleClickOpen3('paper')}
-                      color="secondary"
-                      variant="contained">
-                      More info
-                    </Button>{' '}
-                  </TableCell> */}
                 </TableRow>
               ))}
             </TableBody>

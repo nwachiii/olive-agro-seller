@@ -127,6 +127,7 @@ const Results = ({ className, PendingVendors, ...rest }) => {
                 </TableCell>
                 <TableCell>Company name</TableCell>
                 <TableCell>Company email</TableCell>
+                <TableCell>City</TableCell>
                 <TableCell>Address</TableCell>
                 <TableCell>Phone</TableCell>
                 <TableCell>Approve/Decline</TableCell>
@@ -166,6 +167,7 @@ const Results = ({ className, PendingVendors, ...rest }) => {
                   </TableCell>
                   <TableCell>{PendingVendor.companyEmail}</TableCell>
                   <TableCell>{PendingVendor.companyAddress.state}</TableCell>
+                  <TableCell>{PendingVendor.companyAddress.street}</TableCell>
                   <TableCell>{PendingVendor.phoneNumber}</TableCell>
 
                   <TableCell>
@@ -181,9 +183,9 @@ const Results = ({ className, PendingVendors, ...rest }) => {
                     <Button
                       key={PendingVendor.id}
                       onClick={handleClickOpen3('paper')}
-                      color="secondary"
-                      variant="contained">
-                      see more...
+                      variant="contained"
+                      style={{ color: 'white', backgroundColor: '#0e9146' }}>
+                      See More...
                     </Button>
                   </TableCell>
                 </TableRow>

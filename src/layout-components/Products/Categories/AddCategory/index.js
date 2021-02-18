@@ -36,6 +36,15 @@ function AddCategory() {
                   onChange={e => setCategory(e.target.value)}
                   value={category}
                 />
+                <TextField
+                  fullWidth
+                  className="m-2 mt-4"
+                  id="outlined-basic"
+                  label="sub-category"
+                  variant="outlined"
+                  onChange={e => setCategory(e.target.value)}
+                  value={category}
+                />
                 <Button
                   className="px-6 mx-auto my-3"
                   size="xl"

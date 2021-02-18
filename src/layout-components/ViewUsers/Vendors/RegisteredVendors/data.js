@@ -12,6 +12,7 @@ export default [
     companyEmail: 'ekaterina.dambo@devias.io',
     companyName: 'Ekaterina Dambo',
     phoneNumber: '08123344556',
+    status: 'Expired',
     cacDocument: '../../../../assets/documents/cac-document-sample.jfif',
     directorsID: '../../../../assets/documents/drivers-license-sample.jpg'
   },
@@ -27,6 +28,7 @@ export default [
     companyEmail: 'dayo.yu@devias.io',
     companyName: 'Dayo Odunlade',
     phoneNumber: '09045567684',
+    status: 'Active',
     cacDocument: '../../../../assets/documents/cac-document-sample.jfif',
     directorsID: '../../../../assets/documents/drivers-license-sample.jpg'
   },
@@ -41,6 +43,7 @@ export default [
     companyEmail: 'alex.richardson@devias.io',
     companyName: 'Alex Richardson',
     phoneNumber: '08033425567',
+    status: 'Expired',
     cacDocument: '../../../../assets/documents/cac-document-sample.jfif',
     directorsID: '../../../../assets/documents/drivers-license-sample.jpg'
   },
@@ -55,6 +58,7 @@ export default [
     companyEmail: 'anjola.kosofe@devias.io',
     companyName: 'Anjola Kosofe',
     phoneNumber: '09082156378',
+    status: 'Active',
     cacDocument: '../../../../assets/documents/cac-document-sample.jfif',
     directorsID: '../../../../assets/documents/drivers-license-sample.jpg'
   },
@@ -69,6 +73,7 @@ export default [
     companyEmail: 'clara.gloria@devias.io',
     companyName: 'Clara Gloria',
     phoneNumber: '09072456547',
+    status: 'Expired',
     cacDocument: '../../../../assets/documents/cac-document-sample.jfif',
     directorsID: '../../../../assets/documents/drivers-license-sample.jpg'
   },
@@ -83,6 +88,7 @@ export default [
     companyEmail: 'adam.denis@devias.io',
     companyName: 'Adam Denis',
     phoneNumber: '08158602340',
+    status: 'Active',
     cacDocument: '../../../../assets/documents/cac-document-sample.jfif',
     directorsID: '../../../../assets/documents/drivers-license-sample.jpg'
   },
@@ -97,6 +103,7 @@ export default [
     companyEmail: 'avam.kwame@devias.io',
     companyName: 'Avam Kwame',
     phoneNumber: '08159072647',
+    status: 'Active',
     cacDocument: '../../../../assets/documents/cac-document-sample.jfif',
     directorsID: '../../../../assets/documents/drivers-license-sample.jpg'
   },
@@ -111,6 +118,7 @@ export default [
     companyEmail: 'emilee.simchenko@devias.io',
     companyName: 'Emilee Simchenko',
     phoneNumber: '07026611654',
+    status: 'Active',
     cacDocument: '../../../../assets/documents/cac-document-sample.jfif',
     directorsID: '../../../../assets/documents/drivers-license-sample.jpg'
   },
@@ -125,6 +133,7 @@ export default [
     companyEmail: 'kwak.seong.min@devias.io',
     companyName: 'Kwame Ishola',
     phoneNumber: '08038128947',
+    status: 'Expired',
     cacDocument: '../../../../assets/documents/cac-document-sample.jfif',
     directorsID: '../../../../assets/documents/drivers-license-sample.jpg'
   },
@@ -139,6 +148,7 @@ export default [
     companyEmail: 'merrile.bridget@devias.io',
     companyName: 'Merrile Bridget',
     phoneNumber: '08013017894',
+    status: 'Expired',
     cacDocument: '../../../../assets/documents/cac-document-sample.jfif',
     directorsID: '../../../../assets/documents/drivers-license-sample.jpg'
   }

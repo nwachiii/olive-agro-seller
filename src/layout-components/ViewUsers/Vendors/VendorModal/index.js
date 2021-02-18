@@ -34,13 +34,25 @@ export const VendorModal = Props => {
           <VendorInfo />
         </DialogContentText>
       </DialogContent>
-      <DialogActions className="justify-content-center flex-wrap">
+      <DialogActions className="justify-content-center flex-wrap py-4">
         {/* <div style={ToggleBtnDisplay}> */}
-        <Button onClick={handleClose3} color="primary" variant="contained">
-          Accept
+        <Button
+          onClick={handleClose3}
+          style={{
+            color: 'white',
+            backgroundColor: '#0e9146',
+            width: '200px'
+          }}>
+          Verify
         </Button>
-        <Button onClick={handleClose3} color="secondary" variant="contained">
-          Decline
+        <Button
+          onClick={handleClose3}
+          style={{
+            color: 'white',
+            backgroundColor: 'red',
+            width: '200px'
+          }}>
+          Decline Request
         </Button>
         {/* </div> */}
       </DialogActions>
