@@ -179,7 +179,7 @@ const Results = ({ className, RegisteredVendors, ...rest }) => {
                   </TableCell>
                   <TableCell>{RegisteredVendor.companyEmail}</TableCell>
                   <TableCell>{RegisteredVendor.companyAddress.state}</TableCell>
-                  {RegisteredVendor.status == 'Active' ? (
+                  {RegisteredVendor.status === 'Active' ? (
                     <div className="my-4 px-3">
                       <TableCell className={activeStatusClass}>
                         {RegisteredVendor.status}
