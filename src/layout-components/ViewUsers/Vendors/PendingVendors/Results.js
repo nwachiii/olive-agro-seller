@@ -184,7 +184,7 @@ const Results = ({ className, PendingVendors, ...rest }) => {
                       key={PendingVendor.id}
                       onClick={handleClickOpen3('paper')}
                       variant="contained"
-                      style={{ color: 'white', backgroundColor: '#0e9146' }}>
+                      style={{ color: 'white', backgroundColor: '#57A0D3' }}>
                       See More...
                     </Button>
                   </TableCell>
