@@ -31,9 +31,9 @@ function SeeAllCategories() {
         <ExpansionPanelDetails>
           <Typography>
             <ButtonGroup>
-              <Button color="primary">Edit</Button>
-              <Button color="primary">Delete</Button>
-              <Button color="primary">Add Sub-category</Button>
+              <Button color="primaryLight">Edit</Button>
+              <Button color="primaryLight">Delete</Button>
+              <Button color="primaryLight">Add Sub-category</Button>
             </ButtonGroup>
           </Typography>
         </ExpansionPanelDetails>
@@ -50,9 +50,9 @@ function SeeAllCategories() {
         <ExpansionPanelDetails>
           <Typography>
             <ButtonGroup>
-              <Button color="primary">Edit</Button>
-              <Button color="primary">Delete</Button>
-              <Button color="primary">Add Sub-category</Button>
+              <Button color="primaryLight">Edit</Button>
+              <Button color="primaryLight">Delete</Button>
+              <Button color="primaryLight">Add Sub-category</Button>
             </ButtonGroup>
           </Typography>
         </ExpansionPanelDetails>
@@ -69,9 +69,9 @@ function SeeAllCategories() {
         <ExpansionPanelDetails>
           <Typography>
             <ButtonGroup>
-              <Button color="primary">Edit</Button>
-              <Button color="primary">Delete</Button>
-              <Button color="primary">Add Sub-category</Button>
+              <Button color="primaryLight">Edit</Button>
+              <Button color="primaryLight">Delete</Button>
+              <Button color="primaryLight">Add Sub-category</Button>
             </ButtonGroup>
           </Typography>
         </ExpansionPanelDetails>
@@ -88,9 +88,9 @@ function SeeAllCategories() {
         <ExpansionPanelDetails>
           <Typography>
             <ButtonGroup>
-              <Button color="primary">Edit</Button>
-              <Button color="primary">Delete</Button>
-              <Button color="primary">Add Sub-category</Button>
+              <Button color="primaryLight">Edit</Button>
+              <Button color="primaryLight">Delete</Button>
+              <Button color="primaryLight">Add Sub-category</Button>
             </ButtonGroup>
           </Typography>
         </ExpansionPanelDetails>
@@ -107,9 +107,9 @@ function SeeAllCategories() {
         <ExpansionPanelDetails>
           <Typography>
             <ButtonGroup>
-              <Button color="primary">Edit</Button>
-              <Button color="primary">Delete</Button>
-              <Button color="primary">Add Sub-category</Button>
+              <Button color="primaryLight">Edit</Button>
+              <Button color="primaryLight">Delete</Button>
+              <Button color="primaryLight">Add Sub-category</Button>
             </ButtonGroup>
           </Typography>
         </ExpansionPanelDetails>
@@ -126,9 +126,9 @@ function SeeAllCategories() {
         <ExpansionPanelDetails>
           <Typography>
             <ButtonGroup>
-              <Button color="primary">Edit</Button>
-              <Button color="primary">Delete</Button>
-              <Button color="primary">Add Sub-category</Button>
+              <Button color="primaryLight">Edit</Button>
+              <Button color="primaryLight">Delete</Button>
+              <Button color="primaryLight">Add Sub-category</Button>
             </ButtonGroup>
           </Typography>
         </ExpansionPanelDetails>
@@ -145,9 +145,9 @@ function SeeAllCategories() {
         <ExpansionPanelDetails>
           <Typography>
             <ButtonGroup>
-              <Button color="primary">Edit</Button>
-              <Button color="primary">Delete</Button>
-              <Button color="primary">Add Sub-category</Button>
+              <Button color="primaryLight">Edit</Button>
+              <Button color="primaryLight">Delete</Button>
+              <Button color="primaryLight">Add Sub-category</Button>
             </ButtonGroup>
           </Typography>
         </ExpansionPanelDetails>
@@ -164,9 +164,9 @@ function SeeAllCategories() {
         <ExpansionPanelDetails>
           <Typography>
             <ButtonGroup>
-              <Button color="primary">Edit</Button>
-              <Button color="primary">Delete</Button>
-              <Button color="primary">Add Sub-category</Button>
+              <Button color="primaryLight">Edit</Button>
+              <Button color="primaryLight">Delete</Button>
+              <Button color="primaryLight">Add Sub-category</Button>
             </ButtonGroup>
           </Typography>
         </ExpansionPanelDetails>
