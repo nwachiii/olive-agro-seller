@@ -178,6 +178,7 @@ const Results = ({ className, PendingVendors, ...rest }) => {
                         scroll={scroll}
                         DialogContentText={DialogContentText}
                         descriptionElementRef={descriptionElementRef}
+                        vendorId={PendingVendor.id}
                       />
                     }
                     <Button

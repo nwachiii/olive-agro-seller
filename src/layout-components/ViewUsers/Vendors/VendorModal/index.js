@@ -14,7 +14,8 @@ export const VendorModal = Props => {
     handleClose3,
     scroll,
     DialogContentText,
-    descriptionElementRef
+    descriptionElementRef,
+    vendorId
   } = Props;
   return (
     <Dialog
@@ -31,11 +32,10 @@ export const VendorModal = Props => {
           id="scroll-dialog-description"
           ref={descriptionElementRef}
           tabIndex={2}>
-          <VendorInfo />
+          <VendorInfo vendorId={vendorId} />
         </DialogContentText>
       </DialogContent>
       <DialogActions className="justify-content-center flex-wrap py-4">
-        {/* <div style={ToggleBtnDisplay}> */}
         <Button
           onClick={handleClose3}
           style={{
@@ -54,7 +54,6 @@ export const VendorModal = Props => {
           }}>
           Decline Request
         </Button>
-        {/* </div> */}
       </DialogActions>
     </Dialog>
   );

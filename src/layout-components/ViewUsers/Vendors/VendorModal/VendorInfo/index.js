@@ -1,10 +1,7 @@
 import React from 'react';
 import { makeStyles, createStyles, Theme } from '@material-ui/core/styles';
 import Grid from '@material-ui/core/Grid';
-// import data from '../../PendingVendors/data';
-
-import cacDocument from 'assets/documents/cac-document-sample.jpg';
-import driversLicense from 'assets/documents/drivers-license-sample.jpg';
+import data from '../../PendingVendors/data';
 import { TextField } from '@material-ui/core';
 
 const useStyles = makeStyles((theme: Theme) =>
@@ -21,15 +18,13 @@ const useStyles = makeStyles((theme: Theme) =>
   })
 );
 
-// const VendorData = data;
-
-function VendorInfo() {
+function VendorInfo({ vendorId }) {
+  const [vendor] = data.filter(vendor => vendor.id === vendorId);
   const classes = useStyles();
 
   return (
     <div className={classes.root}>
       <Grid container spacing={4} className="">
-        {/* {VendorData.map(vendorInfo => ( ))} */}
         <form className="d-flex p-3 flex-wrap direction-column">
           <Grid container spacing={4}>
             <Grid item xs={12} lg={6}>
@@ -39,7 +34,7 @@ function VendorInfo() {
                 id="outlined-basic"
                 variant="outlined"
                 label="Company name"
-                value="Kwame Ishola"
+                value={vendor.companyName}
                 disabled
               />
             </Grid>
@@ -50,7 +45,7 @@ function VendorInfo() {
                 id="outlined-basic"
                 variant="outlined"
                 label="Company email"
-                value="kwak.seong.min@devias.io"
+                value={vendor.companyEmail}
                 disabled
               />
             </Grid>
@@ -63,7 +58,7 @@ function VendorInfo() {
                 id="outlined-basic"
                 variant="outlined"
                 label="Address"
-                value="34 Wildrose Lane"
+                value={vendor.companyAddress.street}
                 disabled
               />
             </Grid>
@@ -74,7 +69,7 @@ function VendorInfo() {
                 id="outlined-basic"
                 variant="outlined"
                 label="City"
-                value="Kaduna"
+                value={vendor.companyAddress.state}
                 disabled
               />
             </Grid>
@@ -85,20 +80,20 @@ function VendorInfo() {
                 id="outlined-basic"
                 variant="outlined"
                 label="Phone"
-                value="08038128947"
+                value={vendor.phoneNumber}
                 disabled
               />
             </Grid>
           </Grid>
         </form>
         <Grid item xs={12} sm={12}>
-          <img className="card-img" src={cacDocument} alt="" />
+          <img className="card-img" src={vendor.cacDocument} alt="" />
           <h5 className="card-title font-weight-bold font-size-md flex-wrap pt-3 px-3">
             CAC Document
           </h5>
         </Grid>
         <Grid item xs={12} sm={12}>
-          <img className="card-img" src={driversLicense} alt="" />
+          <img className="card-img" src={vendor.directorsID} alt="" />
           <h5 className="card-title font-weight-bold font-size-md flex-wrap pt-3 px-3">
             Director's ID
           </h5>
