@@ -98,10 +98,6 @@ export default [
         "to": "/PendingVendors"
       }
     ]
-  }, 
-  {
-        "label": "Customers",
-        "to": "/Customers"
   } 
 ]`,
       (key, value) => {
