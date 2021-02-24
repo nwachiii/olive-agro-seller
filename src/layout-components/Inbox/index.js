@@ -4,7 +4,7 @@ import { PageTitle } from '..';
 
 import { ExampleWrapperSeamless } from '..';
 
-import InboxBasic from '../../example-components/Inbox/InboxBasic';
+import InboxBasic from './InboxBasic';
 export default function Inbox() {
   return (
     <Fragment>

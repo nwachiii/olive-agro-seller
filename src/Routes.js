@@ -8,19 +8,11 @@ import MuiTheme from './theme';
 
 // Layout Blueprints
 
-import { LeftSidebar, PresentationLayout } from './layout-blueprints';
+import { LeftSidebar } from './layout-blueprints';
 
 // Example Pages
 
-import Buttons from './example-pages/Buttons';
-import NavigationMenus from './example-pages/NavigationMenus';
-import Pagination from './example-pages/Pagination';
 import Inbox from './layout-components/Inbox';
-import Badges from './example-pages/Badges';
-import Icons from './example-pages/Icons';
-import UtilitiesHelpers from './example-pages/UtilitiesHelpers';
-import RegularTables1 from './example-pages/RegularTables1';
-import RegularTables4 from './example-pages/RegularTables4';
 import AllOrders from './layout-components/OliveOrders/AllOrders';
 import AddCategory from './layout-components/Products/Categories/AddCategory';
 import SeeAllCategories from './layout-components/Products/Categories/SeeAllCategories';
@@ -36,16 +28,6 @@ import PendingVendors from './layout-components/ViewUsers/Vendors/PendingVendors
 import RegisteredVendors from './layout-components/ViewUsers/Vendors/RegisteredVendors';
 
 const Home = lazy(() => import('./layout-components/Home'));
-const Cards3 = lazy(() => import('./example-components/Cards3'));
-const LandingPage = lazy(() => import('./example-pages/LandingPage'));
-const Accordions = lazy(() => import('./example-pages/Accordions'));
-const Modals = lazy(() => import('./example-pages/Modals'));
-const Notifications = lazy(() => import('./example-pages/Notifications'));
-const Popovers = lazy(() => import('./example-pages/Popovers'));
-const Tabs = lazy(() => import('./example-pages/Tabs'));
-const ApexCharts = lazy(() => import('./example-pages/ApexCharts'));
-const Maps = lazy(() => import('./example-pages/Maps'));
-const ListGroups = lazy(() => import('./example-pages/ListGroups'));
 
 const Routes = () => {
   const location = useLocation();
@@ -84,6 +66,7 @@ const Routes = () => {
           }>
           <Switch>
             <Redirect exact from="/" to="/Home" />
+            {/* USE THIS ROUTE FOR LOGIN PAGE
             <Route path={['/LandingPage']}>
               <PresentationLayout>
                 <Switch location={location} key={location.pathname}>
@@ -97,15 +80,11 @@ const Routes = () => {
                   </motion.div>
                 </Switch>
               </PresentationLayout>
-            </Route>
+            </Route> */}
 
             <Route
               path={[
                 '/Home',
-                '/Buttons',
-                '/Dropdowns',
-                '/NavigationMenus',
-                '/Pagination',
                 '/Inbox',
                 '/AddCategory',
                 '/SeeAllCategories',
@@ -119,9 +98,6 @@ const Routes = () => {
                 '/PendingVendors',
                 '/RegisteredVendors',
                 '/Customers',
-                '/Notifications',
-                '/Popovers',
-                '/Tabs',
                 '/AllOrders'
               ]}>
               <LeftSidebar>
@@ -133,27 +109,8 @@ const Routes = () => {
                     variants={pageVariants}
                     transition={pageTransition}>
                     <Route path="/Home" component={Home} />
-                    <Route path="/Buttons" component={Buttons} />
-                    <Route
-                      path="/NavigationMenus"
-                      component={NavigationMenus}
-                    />
-                    <Route path="/Pagination" component={Pagination} />
                     <Route path="/Inbox" component={Inbox} />
-                    <Route path="/Badges" component={Badges} />
-                    <Route path="/Icons" component={Icons} />
-                    <Route
-                      path="/UtilitiesHelpers"
-                      component={UtilitiesHelpers}
-                    />
-                    <Route path="/Cards3" component={Cards3} />
-                    <Route path="/Accordions" component={Accordions} />
-                    <Route path="/Modals" component={Modals} />
-                    <Route path="/Notifications" component={Notifications} />
-                    <Route path="/Popovers" component={Popovers} />
-                    <Route path="/Tabs" component={Tabs} />
-                    <Route path="/RegularTables1" component={RegularTables1} />
-                    <Route path="/RegularTables4" component={RegularTables4} />
+
                     <Route path="/AllOrders" component={AllOrders} />
                     <Route path="/AddCategory" component={AddCategory} />
                     <Route
@@ -173,9 +130,6 @@ const Routes = () => {
                       component={RegisteredVendors}
                     />
                     <Route path="/Customers" component={Customers} />
-                    <Route path="/ApexCharts" component={ApexCharts} />
-                    <Route path="/Maps" component={Maps} />
-                    <Route path="/ListGroups" component={ListGroups} />
                   </motion.div>
                 </Switch>
               </LeftSidebar>

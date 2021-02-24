@@ -3,7 +3,7 @@ import { VStack } from '@chakra-ui/react';
 
 import { PageTitle } from '..';
 
-import PaginationBasic from '../../example-components/Pagination/PaginationBasic';
+import PaginationBasic from '../Cards/PaginationBasic';
 import HomeFirstCard from '../Cards/HomeFirstCard';
 import OtherHomeCards from '../Cards/OtherHomeCards';
 
