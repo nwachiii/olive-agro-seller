@@ -1,33 +1,36 @@
-import React, { lazy, Suspense } from 'react';
-import { Switch, Route, Redirect, useLocation } from 'react-router-dom';
-import { AnimatePresence, motion } from 'framer-motion';
+import React, { lazy, Suspense } from "react";
+import { Switch, Route, Redirect, useLocation } from "react-router-dom";
+import { AnimatePresence, motion } from "framer-motion";
 
-import { ThemeProvider } from '@material-ui/styles';
+import { ThemeProvider } from "@material-ui/styles";
 
-import MuiTheme from './theme';
+import MuiTheme from "./theme";
 
 // Layout Blueprints
 
-import { LeftSidebar } from './layout-blueprints';
+import { LeftSidebar } from "./layout-blueprints";
+import { PresentationLayout } from "./layout-blueprints";
 
-// Example Pages
+// layout-components
+import Inbox from "./layout-components/Inbox";
+import AllOrders from "./layout-components/OliveOrders/AllOrders";
+import AddCategory from "./layout-components/Products/Categories/AddCategory";
+import SeeAllCategories from "./layout-components/Products/Categories/SeeAllCategories";
+import FruitsVeg from "./layout-components/Products/FruitsVeg";
+import Drinks from "./layout-components/Products/Drinks";
+import Spices from "./layout-components/Products/Spices";
+import DryHerbs from "./layout-components/Products/DryHerbs";
+import Legumes from "./layout-components/Products/Legumes";
+import Flours from "./layout-components/Products/Flours";
+import Oils from "./layout-components/Products/Oils";
+import Customers from "./layout-components/ViewUsers/Customers";
+import PendingVendors from "./layout-components/ViewUsers/Vendors/PendingVendors";
+import RegisteredVendors from "./layout-components/ViewUsers/Vendors/RegisteredVendors";
 
-import Inbox from './layout-components/Inbox';
-import AllOrders from './layout-components/OliveOrders/AllOrders';
-import AddCategory from './layout-components/Products/Categories/AddCategory';
-import SeeAllCategories from './layout-components/Products/Categories/SeeAllCategories';
-import FruitsVeg from './layout-components/Products/FruitsVeg';
-import Drinks from './layout-components/Products/Drinks';
-import Spices from './layout-components/Products/Spices';
-import DryHerbs from './layout-components/Products/DryHerbs';
-import Legumes from './layout-components/Products/Legumes';
-import Flours from './layout-components/Products/Flours';
-import Oils from './layout-components/Products/Oils';
-import Customers from './layout-components/ViewUsers/Customers';
-import PendingVendors from './layout-components/ViewUsers/Vendors/PendingVendors';
-import RegisteredVendors from './layout-components/ViewUsers/Vendors/RegisteredVendors';
+const Home = lazy(() => import("./layout-components/Home"));
 
-const Home = lazy(() => import('./layout-components/Home'));
+//auth
+const LoginRegister = lazy(() => import("./Login/LoginRegister"));
 
 const Routes = () => {
   const location = useLocation();
@@ -35,22 +38,22 @@ const Routes = () => {
   const pageVariants = {
     initial: {
       opacity: 0,
-      scale: 0.99
+      scale: 0.99,
     },
     in: {
       opacity: 1,
-      scale: 1
+      scale: 1,
     },
     out: {
       opacity: 0,
-      scale: 1.01
-    }
+      scale: 1.01,
+    },
   };
 
   const pageTransition = {
-    type: 'tween',
-    ease: 'anticipate',
-    duration: 0.7
+    type: "tween",
+    ease: "anticipate",
+    duration: 0.7,
   };
 
   return (
@@ -63,11 +66,11 @@ const Routes = () => {
                 Please wait while we load your dashboard
               </div>
             </div>
-          }>
+          }
+        >
           <Switch>
             <Redirect exact from="/" to="/Home" />
-            {/* USE THIS ROUTE FOR LOGIN PAGE
-            <Route path={['/LandingPage']}>
+            <Route path={["/Login"]}>
               <PresentationLayout>
                 <Switch location={location} key={location.pathname}>
                   <motion.div
@@ -75,31 +78,36 @@ const Routes = () => {
                     animate="in"
                     exit="out"
                     variants={pageVariants}
-                    transition={pageTransition}>
-                    <Route path="/LandingPage" component={LandingPage} />
+                    transition={pageTransition}
+                  >
+                    <Route
+                      path={process.env.PUBLIC_URL + "/Login"}
+                      component={LoginRegister}
+                    />
                   </motion.div>
                 </Switch>
               </PresentationLayout>
-            </Route> */}
+            </Route>
 
             <Route
               path={[
-                '/Home',
-                '/Inbox',
-                '/AddCategory',
-                '/SeeAllCategories',
-                '/FruitsVeg',
-                '/Spices',
-                '/Drinks',
-                '/DryHerbs',
-                '/Legumes',
-                '/Oils',
-                '/Flours',
-                '/PendingVendors',
-                '/RegisteredVendors',
-                '/Customers',
-                '/AllOrders'
-              ]}>
+                "/Home",
+                "/Inbox",
+                "/AddCategory",
+                "/SeeAllCategories",
+                "/FruitsVeg",
+                "/Spices",
+                "/Drinks",
+                "/DryHerbs",
+                "/Legumes",
+                "/Oils",
+                "/Flours",
+                "/PendingVendors",
+                "/RegisteredVendors",
+                "/Customers",
+                "/AllOrders",
+              ]}
+            >
               <LeftSidebar>
                 <Switch location={location} key={location.pathname}>
                   <motion.div
@@ -107,7 +115,8 @@ const Routes = () => {
                     animate="in"
                     exit="out"
                     variants={pageVariants}
-                    transition={pageTransition}>
+                    transition={pageTransition}
+                  >
                     <Route path="/Home" component={Home} />
                     <Route path="/Inbox" component={Inbox} />
 
