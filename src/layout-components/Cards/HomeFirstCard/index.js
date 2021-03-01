@@ -1,20 +1,9 @@
-import React, { Fragment, useState } from 'react';
+import React, { Fragment, useState } from "react";
 
-import { Grid, Card, Avatar } from '@material-ui/core';
-import { Flex } from '@chakra-ui/react';
-// import { makeStyles } from '@material-ui/core/styles';
-// A style sheet
-// const useStyles = makeStyles({
-//   avatar: `
-//   height: 30,
-//     width: 30,
-//     cursor: pointer,
-//     paddingRight: 3px,
-//   `
-// });
+import { Grid, Card, Avatar } from "@material-ui/core";
+import { Flex } from "@chakra-ui/react";
 
 export default function HomeFirstCard() {
-  // const classes = useStyles();
   const [count] = useState(0);
   return (
     <Fragment>
@@ -40,7 +29,8 @@ export default function HomeFirstCard() {
               wrap="wrap"
               textAlign="center"
               spacing={8}
-              maxWidth="500px">
+              maxWidth="500px"
+            >
               <div className="flex-grow-1 mt-4 mx-4">
                 <h1 className="text-black-40">{count}</h1>
                 <a className="text-black-50 pt-2" href="/#">

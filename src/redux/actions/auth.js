@@ -11,8 +11,8 @@ export const LOGIN_FAIL = "LOGIN_FAIL";
 
 export const LOGOUT = "LOGOUT";
 
-// LOAD Admin
-export const loadAdmin = () => async (dispatch) => {
+// LOAD user
+export const loadUser = () => async (dispatch) => {
   const token = localStorage.getItem("token");
 
   const config = {
@@ -23,21 +23,13 @@ export const loadAdmin = () => async (dispatch) => {
 
   try {
     const res = await axios.get(
-      "https://www.api.oliveagro.org/api/auth/users",
+      "https://www.api.oliveagro.org/api/auth/getUser",
       config
     );
-    // if (res.data.errors === "No User Logged In") {
-    //   const errorArr = { Failure: [[res.data]] };
-    //   dispatch({
-    //     type: AUTH_ERROR,
-    //     payload: errorArr,
-    //   });
-    // } else {
     dispatch({
       type: USER_LOADED,
       payload: res.data,
     });
-    // }
   } catch (error) {
     dispatch({
       type: AUTH_ERROR,
@@ -45,7 +37,7 @@ export const loadAdmin = () => async (dispatch) => {
   }
 };
 
-// Register Admin
+// Register User
 export const register = ({
   firstName,
   lastName,
@@ -69,7 +61,7 @@ export const register = ({
 
   try {
     const res = await axios.post(
-      "https://www.api.oliveagro.org/api/users/create/admin",
+      "https://www.api.oliveagro.org/api/users/create/user",
       body,
       config
     );
@@ -77,7 +69,7 @@ export const register = ({
       type: REGISTER_SUCCESS,
       payload: res.data,
     });
-    dispatch(loadAdmin());
+    dispatch(loadUser());
   } catch (error) {
     // dispatch(setAlert(error.response.data.errors, "danger"));
     console.log(error.response);
@@ -103,21 +95,13 @@ export const login = ({ email, password }) => async (dispatch) => {
       body,
       config
     );
-    // if (res.data.failure === "Log in failed! Username or password invalid!") {
-    //   const errorArr = { Failure: [[res.data]] };
-    //   dispatch({
-    //     type: LOGIN_FAIL,
-    //     payload: errorArr,
-    //   });
-    // } else {
     dispatch({
       type: LOGIN_SUCCESS,
       payload: res.data,
     });
     // }
-    dispatch(loadAdmin());
+    dispatch(loadUser());
   } catch (error) {
-    // dispatch(setAlert(error.response.data.errors, "danger"));
     console.log(error.response.data.errors);
     dispatch({
       type: LOGIN_FAIL,

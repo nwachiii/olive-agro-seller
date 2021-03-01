@@ -10,8 +10,8 @@ import {
 
 const initialState = {
   token: localStorage.getItem("token"),
-  isAuthenticated: false,
-  loading: true,
+  isAuthenticated: null,
+  loading: false,
   user: null,
   admin: false,
 };
@@ -51,7 +51,7 @@ export default function(state = initialState, action) {
         isAuthenticated: false,
         loading: false,
         admin: false,
-        user: {},
+        user: null,
       };
     default:
       return state;
