@@ -9,13 +9,13 @@ import MuiTheme from "./theme";
 // Layout Blueprints
 
 import { LeftSidebar } from "./layout-blueprints";
-import { PresentationLayout } from "./layout-blueprints";
+// import { PresentationLayout } from "./layout-blueprints";
 
 // layout-components
 import Inbox from "./layout-components/Inbox";
 import AllOrders from "./layout-components/OliveOrders/AllOrders";
-import AddCategory from "./layout-components/Products/Categories/AddCategory";
-import SeeAllCategories from "./layout-components/Products/Categories/SeeAllCategories";
+import AddCategory from "./layout-components/Categories/AddCategory";
+import SeeAllCategories from "./layout-components/Categories/SeeAllCategories";
 import FruitsVeg from "./layout-components/Products/FruitsVeg";
 import Drinks from "./layout-components/Products/Drinks";
 import Spices from "./layout-components/Products/Spices";
@@ -30,7 +30,8 @@ import RegisteredVendors from "./layout-components/ViewUsers/Vendors/RegisteredV
 const Home = lazy(() => import("./layout-components/Home"));
 
 //auth
-const LoginRegister = lazy(() => import("./Login/LoginRegister"));
+const Login = lazy(() => import("./Login/Login"));
+const Register = lazy(() => import("./Login/Register"));
 
 const Routes = () => {
   const location = useLocation();
@@ -70,24 +71,20 @@ const Routes = () => {
         >
           <Switch>
             <Redirect exact from="/" to="/Home" />
-            <Route path={["/Login"]}>
-              <PresentationLayout>
-                <Switch location={location} key={location.pathname}>
-                  <motion.div
-                    initial="initial"
-                    animate="in"
-                    exit="out"
-                    variants={pageVariants}
-                    transition={pageTransition}
-                  >
-                    <Route
-                      path={process.env.PUBLIC_URL + "/Login"}
-                      component={LoginRegister}
-                    />
-                  </motion.div>
-                </Switch>
-              </PresentationLayout>
-            </Route>
+            {/* 
+            <PresentationLayout>
+              <Switch location={location} key={location.pathname}>
+                <motion.div
+                  initial="initial"
+                  animate="in"
+                  exit="out"
+                  variants={pageVariants}
+                  transition={pageTransition}
+                ></motion.div>
+              </Switch>
+            </PresentationLayout> */}
+            <Route exact path="/Login" component={Login}></Route>
+            <Route exact path="/Register" component={Register}></Route>
 
             <Route
               path={[
@@ -106,6 +103,7 @@ const Routes = () => {
                 "/RegisteredVendors",
                 "/Customers",
                 "/AllOrders",
+                "/Login",
               ]}
             >
               <LeftSidebar>

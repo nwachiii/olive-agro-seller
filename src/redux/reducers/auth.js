@@ -31,13 +31,14 @@ export default function(state = initialState, action) {
     case REGISTER_SUCCESS:
     case LOGIN_SUCCESS:
       localStorage.setItem("token", payload.users.token);
-      localStorage.setItem("user", JSON.stringify(payload.users));
+      localStorage.setItem("user", JSON.stringify(payload.users.extra));
       return {
         ...state,
         ...payload,
         isAuthenticated: true,
         loading: false,
         admin: payload.admin,
+        user: payload,
       };
     case REGISTER_FAIL:
     case LOGOUT:
@@ -51,7 +52,7 @@ export default function(state = initialState, action) {
         isAuthenticated: false,
         loading: false,
         admin: false,
-        user: {},
+        user: null,
       };
     default:
       return state;
