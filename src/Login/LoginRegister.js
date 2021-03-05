@@ -1,9 +1,8 @@
 import PropTypes from "prop-types";
 import React, { useState } from "react";
-import { Link, useHistory } from "react-router-dom";
+import { Link, useHistory, Redirect } from "react-router-dom";
 import { connect } from "react-redux";
 import MetaTags from "react-meta-tags";
-import { BreadcrumbsItem } from "react-breadcrumbs-dynamic";
 import { Tab, Nav } from "react-bootstrap";
 
 import {
@@ -13,18 +12,15 @@ import {
   TextField,
   Button,
   Typography,
-  Link,
   Checkbox,
   FormControlLabel,
 } from "@material-ui/core";
 import LockOutlinedIcon from "@material-ui/icons/LockOutlined";
 
 //components
-// import Breadcrumb from "../layout-components/breadcrumb";
 import { login, register } from "../redux/actions/auth";
 
 const LoginRegister = ({ location, register, login, isAuthenticated }) => {
-  const { pathname } = location;
   let history = useHistory();
   console.log("Emmanuel");
 
@@ -75,14 +71,20 @@ const LoginRegister = ({ location, register, login, isAuthenticated }) => {
     login({ email, password });
   };
 
-   const paperStyle = {
-     padding: 20,
-     height: "70vh",
-     width: 280,
-     margin: "20px auto",
-   };
-   const avatarStyle = { backgroundColor: "#1bbd7e" };
-   const btnstyle = { margin: "8px 0" };
+  const paperStyle = {
+    padding: 20,
+    minHeight: 300,
+    maxHeight: "auto",
+    width: 580,
+    margin: "20px auto",
+  };
+  const avatarStyle = { backgroundColor: "#1bbd7e" };
+  const btnstyle = {
+    margin: "8px 0",
+    color: "white",
+    backgroundColor: "#0e9146",
+  };
+  const textfieldStyle = { margin: "8px 0" };
 
   // redirect if login
   if (isAuthenticated) {
@@ -98,12 +100,6 @@ const LoginRegister = ({ location, register, login, isAuthenticated }) => {
           content="Login and Register page for olive agro admin "
         />
       </MetaTags>
-      <BreadcrumbsItem to={process.env.PUBLIC_URL + "/"}>Home</BreadcrumbsItem>
-      <BreadcrumbsItem to={process.env.PUBLIC_URL + pathname}>
-        Login / Register
-      </BreadcrumbsItem>
-      {/* breadcrumb */}
-      {/* <Breadcrumb /> */}
 
       <Grid>
         <Paper elevation={10} style={paperStyle}>
@@ -127,41 +123,36 @@ const LoginRegister = ({ location, register, login, isAuthenticated }) => {
             </Grid>
             <Tab.Content>
               <Tab.Pane eventKey="login">
-                    <form onSubmit={(e) => handleSubmit(e)}>
-                      <TextField
-                        type="email"
-                        value={email}
-                        placeholder="eee@gmail.com"
-                        name="email"
-                        onChange={(e) => handleChange(e)}
-                        fullWidth
-                        required
-                      />
-                      <TextField
-                        type="password"
-                        placeholder="************"
-                        value={password}
-                        name="password"
-                        onChange={(e) => handleChange(e)}
-                        // minLength='6'
-                        fullWidth
-                        required
-                      />
-                      <div className="button-box">
-                        <Typography>
-                          <Link href="#">Forgot password ?</Link>
-                        </Typography>
-                        <Button
-                          type="submit"
-                          color="primary"
-                          variant="contained"
-                          style={btnstyle}
-                          fullWidth
-                        >
-                          Register
-                        </Button>
-                      </div>
-                    </form>
+                <form onSubmit={(e) => handleSubmit(e)}>
+                  <TextField
+                    type="email"
+                    value={email}
+                    placeholder="eee@gmail.com"
+                    name="email"
+                    onChange={(e) => handleChange(e)}
+                    fullWidth
+                    required
+                  />
+                  <TextField
+                    type="password"
+                    placeholder="************"
+                    value={password}
+                    name="password"
+                    onChange={(e) => handleChange(e)}
+                    style={textfieldStyle}
+                    // minLength='6'
+                    fullWidth
+                    required
+                  />
+                  <div className="button-box">
+                    <Typography>
+                      <Link to="/">Forgot password ?</Link>
+                    </Typography>
+                    <Button type="submit" style={btnstyle} fullWidth>
+                      Log in
+                    </Button>
+                  </div>
+                </form>
               </Tab.Pane>
               <Tab.Pane eventKey="register">
                 <form onSubmit={(e) => onSubmit(e)}>
@@ -173,6 +164,7 @@ const LoginRegister = ({ location, register, login, isAuthenticated }) => {
                     onChange={(e) => onChange(e)}
                     fullWidth
                     required
+                    style={textfieldStyle}
                   />
                   <TextField
                     className="p"
@@ -183,6 +175,7 @@ const LoginRegister = ({ location, register, login, isAuthenticated }) => {
                     onChange={(e) => onChange(e)}
                     fullWidth
                     required
+                    style={textfieldStyle}
                   />
                   <TextField
                     type="email"
@@ -192,6 +185,7 @@ const LoginRegister = ({ location, register, login, isAuthenticated }) => {
                     onChange={(e) => onChange(e)}
                     fullWidth
                     required
+                    style={textfieldStyle}
                   />
                   <TextField
                     type="tel"
@@ -201,6 +195,7 @@ const LoginRegister = ({ location, register, login, isAuthenticated }) => {
                     onChange={(e) => onChange(e)}
                     fullWidth
                     required
+                    style={textfieldStyle}
                   />
                   <TextField
                     type="password"
@@ -210,6 +205,7 @@ const LoginRegister = ({ location, register, login, isAuthenticated }) => {
                     onChange={(e) => onChange(e)}
                     fullWidth
                     required
+                    style={textfieldStyle}
                   />
                   <TextField
                     type="password"
@@ -220,18 +216,13 @@ const LoginRegister = ({ location, register, login, isAuthenticated }) => {
                     // minLength='6'
                     fullWidth
                     required
+                    style={textfieldStyle}
                   />
                   <FormControlLabel
                     control={<Checkbox name="checkedB" color="primary" />}
                     label="Remember me"
                   />
-                  <Button
-                    type="submit"
-                    color="primary"
-                    variant="contained"
-                    style={btnstyle}
-                    fullWidth
-                  >
+                  <Button type="submit" style={btnstyle} fullWidth>
                     Register
                   </Button>
                 </form>
@@ -239,14 +230,15 @@ const LoginRegister = ({ location, register, login, isAuthenticated }) => {
             </Tab.Content>
           </Tab.Container>
         </Paper>
-      {/* </Grid>
+      </Grid>
+      {/* 
       <div className="login-register-area pt-100 pb-100">
         <div className="container">
           <div className="row">
             <div className="col-lg-7 col-md-12 ml-auto mr-auto">
               <div className="login-register-wrapper">
                 <Tab.Container defaultActiveKey="login"> */}
-                  {/* <Nav variant="pills" className="login-register-tab-list">
+      {/* <Nav variant="pills" className="login-register-tab-list">
                     <Nav.Item>
                       <Nav.Link eventKey="login">
                         <h4>Login</h4>
@@ -258,8 +250,8 @@ const LoginRegister = ({ location, register, login, isAuthenticated }) => {
                       </Nav.Link>
                     </Nav.Item>
                   </Nav> */}
-                  {/* <Tab.Content> */}
-                    {/* <Tab.Pane eventKey="login">
+      {/* <Tab.Content> */}
+      {/* <Tab.Pane eventKey="login">
                       <div className="login-form-container">
                         <div className="login-register-form">
                           <form onSubmit={(e) => handleSubmit(e)}>
@@ -295,7 +287,7 @@ const LoginRegister = ({ location, register, login, isAuthenticated }) => {
                         </div>
                       </div>
                     </Tab.Pane> */}
-{/*                     
+      {/*                     
                     <Tab.Pane eventKey="register">
                       <div className="login-form-container">
                         <div className="login-register-form">
@@ -367,9 +359,9 @@ const LoginRegister = ({ location, register, login, isAuthenticated }) => {
           </div>
         </div>
       </div> */}
+    </>
   );
 };
-   
 
 LoginRegister.propTypes = {
   location: PropTypes.object,
@@ -381,5 +373,4 @@ LoginRegister.propTypes = {
 const mapStateToProps = (state) => ({
   isAuthenticated: state.auth.isAuthenticated,
 });
- </>
 export default connect(mapStateToProps, { login, register })(LoginRegister);
