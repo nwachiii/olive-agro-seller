@@ -109,7 +109,7 @@ const Login = ({ login, isAuthenticated }) => {
               </Button>
             </div>
             <div className="text-center my-3">
-              <Link to="/Register">Don't have an account yet ? Register</Link>
+              <Link to="/Register">Don't have an account yet? Register</Link>
             </div>
           </form>
         </Paper>

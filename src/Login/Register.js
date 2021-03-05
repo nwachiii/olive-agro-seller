@@ -182,7 +182,7 @@ const Register = ({ register, isAuthenticated }) => {
                     Register
                   </Button>
                   <div className="text-center my-4">
-                    <Link to="/Login">I have an account! Log in</Link>
+                    <Link to="/Login">Already have an account? Log in</Link>
                   </div>
                 </form>
               </Tab.Pane>

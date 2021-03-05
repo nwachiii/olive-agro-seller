@@ -20,7 +20,8 @@ function HeaderUserbox({ auth, logout }) {
   };
 
   //grab auth and user
-  const { isAuthenticated, user } = auth;
+  const { isAuthenticated } = auth;
+  const user = JSON.parse(localStorage.getItem("user"));
   return (
     <Fragment>
       <Button
@@ -38,7 +39,7 @@ function HeaderUserbox({ auth, logout }) {
         </Box>
         <div className="d-none d-xl-block pl-3">
           <div className="font-weight-bold pt-2 line-height-1">
-            {user ? user.firstName : ""}
+            {user ? ` ${user.firstName}  ${user.lastName}` : ""}
           </div>
           <span className="text-white-50 text-center">Admin</span>
         </div>
