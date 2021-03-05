@@ -30,7 +30,8 @@ import RegisteredVendors from "./layout-components/ViewUsers/Vendors/RegisteredV
 const Home = lazy(() => import("./layout-components/Home"));
 
 //auth
-const LoginRegister = lazy(() => import("./Login/LoginRegister"));
+const Login = lazy(() => import("./Login/Login"));
+const Register = lazy(() => import("./Login/Register"));
 
 const Routes = () => {
   const location = useLocation();
@@ -70,19 +71,20 @@ const Routes = () => {
         >
           <Switch>
             <Redirect exact from="/" to="/Home" />
-            <Route exact path="/Login" component={LoginRegister}>
-              {/* <PresentationLayout>
-                <Switch location={location} key={location.pathname}>
-                  <motion.div
-                    initial="initial"
-                    animate="in"
-                    exit="out"
-                    variants={pageVariants}
-                    transition={pageTransition}
-                  ></motion.div>
-                </Switch>
-              </PresentationLayout> */}
-            </Route>
+            {/* 
+            <PresentationLayout>
+              <Switch location={location} key={location.pathname}>
+                <motion.div
+                  initial="initial"
+                  animate="in"
+                  exit="out"
+                  variants={pageVariants}
+                  transition={pageTransition}
+                ></motion.div>
+              </Switch>
+            </PresentationLayout> */}
+            <Route exact path="/Login" component={Login}></Route>
+            <Route exact path="/Register" component={Register}></Route>
 
             <Route
               path={[
