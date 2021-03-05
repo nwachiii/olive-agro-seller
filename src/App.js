@@ -7,11 +7,9 @@ import ScrollToTop from "./utils/ScrollToTop";
 import "./assets/base.scss";
 import CssBaseline from "@material-ui/core/CssBaseline";
 
-const store = configureStore();
-
 const App = () => {
   return (
-    <Provider store={store}>
+    <Provider store={configureStore}>
       <BrowserRouter basename="/olive-agro/">
         <CssBaseline />
         <ScrollToTop>

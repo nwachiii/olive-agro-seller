@@ -9,13 +9,13 @@ import MuiTheme from "./theme";
 // Layout Blueprints
 
 import { LeftSidebar } from "./layout-blueprints";
-import { PresentationLayout } from "./layout-blueprints";
+// import { PresentationLayout } from "./layout-blueprints";
 
 // layout-components
 import Inbox from "./layout-components/Inbox";
 import AllOrders from "./layout-components/OliveOrders/AllOrders";
-import AddCategory from "./layout-components/Products/Categories/AddCategory";
-import SeeAllCategories from "./layout-components/Products/Categories/SeeAllCategories";
+import AddCategory from "./layout-components/Categories/AddCategory";
+import SeeAllCategories from "./layout-components/Categories/SeeAllCategories";
 import FruitsVeg from "./layout-components/Products/FruitsVeg";
 import Drinks from "./layout-components/Products/Drinks";
 import Spices from "./layout-components/Products/Spices";
@@ -70,8 +70,8 @@ const Routes = () => {
         >
           <Switch>
             <Redirect exact from="/" to="/Home" />
-            <Route path={["/Login"]}>
-              <PresentationLayout>
+            <Route exact path="/Login" component={LoginRegister}>
+              {/* <PresentationLayout>
                 <Switch location={location} key={location.pathname}>
                   <motion.div
                     initial="initial"
@@ -79,14 +79,9 @@ const Routes = () => {
                     exit="out"
                     variants={pageVariants}
                     transition={pageTransition}
-                  >
-                    <Route
-                      path={process.env.PUBLIC_URL + "/Login"}
-                      component={LoginRegister}
-                    />
-                  </motion.div>
+                  ></motion.div>
                 </Switch>
-              </PresentationLayout>
+              </PresentationLayout> */}
             </Route>
 
             <Route
@@ -106,6 +101,7 @@ const Routes = () => {
                 "/RegisteredVendors",
                 "/Customers",
                 "/AllOrders",
+                "/Login",
               ]}
             >
               <LeftSidebar>

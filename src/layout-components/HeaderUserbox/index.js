@@ -93,7 +93,9 @@ function HeaderUserbox({ logout }) {
             <ListItem button>My Account</ListItem>
             <ListItem button>Settings</ListItem>
             <ListItem button>
-              <Link to="/Login">Log out</Link>
+              <Link to="/Login" onClick={logout}>
+                Log out
+              </Link>
             </ListItem>
           </List>
         </div>

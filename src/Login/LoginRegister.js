@@ -1,18 +1,32 @@
 import PropTypes from "prop-types";
 import React, { useState } from "react";
-import { Link, Redirect, useHistory } from "react-router-dom";
+import { Link, useHistory } from "react-router-dom";
 import { connect } from "react-redux";
 import MetaTags from "react-meta-tags";
 import { BreadcrumbsItem } from "react-breadcrumbs-dynamic";
 import { Tab, Nav } from "react-bootstrap";
 
+import {
+  Grid,
+  Paper,
+  Avatar,
+  TextField,
+  Button,
+  Typography,
+  Link,
+  Checkbox,
+  FormControlLabel,
+} from "@material-ui/core";
+import LockOutlinedIcon from "@material-ui/icons/LockOutlined";
+
 //components
-import Breadcrumb from "../layout-components/breadcrumb";
+// import Breadcrumb from "../layout-components/breadcrumb";
 import { login, register } from "../redux/actions/auth";
 
 const LoginRegister = ({ location, register, login, isAuthenticated }) => {
   const { pathname } = location;
   let history = useHistory();
+  console.log("Emmanuel");
 
   // Register
   const [formData, setFormData] = useState({
@@ -61,6 +75,15 @@ const LoginRegister = ({ location, register, login, isAuthenticated }) => {
     login({ email, password });
   };
 
+   const paperStyle = {
+     padding: 20,
+     height: "70vh",
+     width: 280,
+     margin: "20px auto",
+   };
+   const avatarStyle = { backgroundColor: "#1bbd7e" };
+   const btnstyle = { margin: "8px 0" };
+
   // redirect if login
   if (isAuthenticated) {
     return <Redirect to="/" />;
@@ -80,14 +103,150 @@ const LoginRegister = ({ location, register, login, isAuthenticated }) => {
         Login / Register
       </BreadcrumbsItem>
       {/* breadcrumb */}
-      <Breadcrumb />
+      {/* <Breadcrumb /> */}
+
+      <Grid>
+        <Paper elevation={10} style={paperStyle}>
+          <Tab.Container defaultActiveKey="login">
+            <Grid align="center">
+              <Avatar style={avatarStyle}>
+                <LockOutlinedIcon />
+              </Avatar>
+              <Nav variant="pills" className="login-register-tab-list">
+                <Nav.Item>
+                  <Nav.Link eventKey="login">
+                    <h4>Login</h4>
+                  </Nav.Link>
+                </Nav.Item>
+                <Nav.Item>
+                  <Nav.Link eventKey="register">
+                    <h4>Register</h4>
+                  </Nav.Link>
+                </Nav.Item>
+              </Nav>
+            </Grid>
+            <Tab.Content>
+              <Tab.Pane eventKey="login">
+                    <form onSubmit={(e) => handleSubmit(e)}>
+                      <TextField
+                        type="email"
+                        value={email}
+                        placeholder="eee@gmail.com"
+                        name="email"
+                        onChange={(e) => handleChange(e)}
+                        fullWidth
+                        required
+                      />
+                      <TextField
+                        type="password"
+                        placeholder="************"
+                        value={password}
+                        name="password"
+                        onChange={(e) => handleChange(e)}
+                        // minLength='6'
+                        fullWidth
+                        required
+                      />
+                      <div className="button-box">
+                        <Typography>
+                          <Link href="#">Forgot password ?</Link>
+                        </Typography>
+                        <Button
+                          type="submit"
+                          color="primary"
+                          variant="contained"
+                          style={btnstyle}
+                          fullWidth
+                        >
+                          Register
+                        </Button>
+                      </div>
+                    </form>
+              </Tab.Pane>
+              <Tab.Pane eventKey="register">
+                <form onSubmit={(e) => onSubmit(e)}>
+                  <TextField
+                    type="text"
+                    value={firstName}
+                    placeholder="First Name"
+                    label="firstName"
+                    onChange={(e) => onChange(e)}
+                    fullWidth
+                    required
+                  />
+                  <TextField
+                    className="p"
+                    type="text"
+                    value={lastName}
+                    placeholder="Last Name"
+                    label="lastName"
+                    onChange={(e) => onChange(e)}
+                    fullWidth
+                    required
+                  />
+                  <TextField
+                    type="email"
+                    value={email}
+                    placeholder="eee@gmail.com"
+                    label="email"
+                    onChange={(e) => onChange(e)}
+                    fullWidth
+                    required
+                  />
+                  <TextField
+                    type="tel"
+                    value={phoneNumber}
+                    placeholder="08012345678"
+                    label="phoneNumber"
+                    onChange={(e) => onChange(e)}
+                    fullWidth
+                    required
+                  />
+                  <TextField
+                    type="password"
+                    placeholder="************"
+                    value={password}
+                    label="password"
+                    onChange={(e) => onChange(e)}
+                    fullWidth
+                    required
+                  />
+                  <TextField
+                    type="password"
+                    placeholder="************"
+                    value={password2}
+                    label="password2"
+                    onChange={(e) => onChange(e)}
+                    // minLength='6'
+                    fullWidth
+                    required
+                  />
+                  <FormControlLabel
+                    control={<Checkbox name="checkedB" color="primary" />}
+                    label="Remember me"
+                  />
+                  <Button
+                    type="submit"
+                    color="primary"
+                    variant="contained"
+                    style={btnstyle}
+                    fullWidth
+                  >
+                    Register
+                  </Button>
+                </form>
+              </Tab.Pane>
+            </Tab.Content>
+          </Tab.Container>
+        </Paper>
+      {/* </Grid>
       <div className="login-register-area pt-100 pb-100">
         <div className="container">
           <div className="row">
             <div className="col-lg-7 col-md-12 ml-auto mr-auto">
               <div className="login-register-wrapper">
-                <Tab.Container defaultActiveKey="login">
-                  <Nav variant="pills" className="login-register-tab-list">
+                <Tab.Container defaultActiveKey="login"> */}
+                  {/* <Nav variant="pills" className="login-register-tab-list">
                     <Nav.Item>
                       <Nav.Link eventKey="login">
                         <h4>Login</h4>
@@ -98,9 +257,9 @@ const LoginRegister = ({ location, register, login, isAuthenticated }) => {
                         <h4>Register</h4>
                       </Nav.Link>
                     </Nav.Item>
-                  </Nav>
-                  <Tab.Content>
-                    <Tab.Pane eventKey="login">
+                  </Nav> */}
+                  {/* <Tab.Content> */}
+                    {/* <Tab.Pane eventKey="login">
                       <div className="login-form-container">
                         <div className="login-register-form">
                           <form onSubmit={(e) => handleSubmit(e)}>
@@ -135,7 +294,8 @@ const LoginRegister = ({ location, register, login, isAuthenticated }) => {
                           </form>
                         </div>
                       </div>
-                    </Tab.Pane>
+                    </Tab.Pane> */}
+{/*                     
                     <Tab.Pane eventKey="register">
                       <div className="login-form-container">
                         <div className="login-register-form">
@@ -206,10 +366,10 @@ const LoginRegister = ({ location, register, login, isAuthenticated }) => {
             </div>
           </div>
         </div>
-      </div>
-    </>
+      </div> */}
   );
 };
+   
 
 LoginRegister.propTypes = {
   location: PropTypes.object,
@@ -221,5 +381,5 @@ LoginRegister.propTypes = {
 const mapStateToProps = (state) => ({
   isAuthenticated: state.auth.isAuthenticated,
 });
-
+ </>
 export default connect(mapStateToProps, { login, register })(LoginRegister);
