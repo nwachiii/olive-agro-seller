@@ -17,7 +17,7 @@ function ShowCategories() {
   const dispatch = useDispatch();
   useEffect(() => {
     dispatch(listCategories());
-  }, []);
+  }, [dispatch]);
   return (
     <>
       <MetaTags>
