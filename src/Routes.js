@@ -71,18 +71,7 @@ const Routes = () => {
         >
           <Switch>
             <Redirect exact from="/" to="/Home" />
-            {/* 
-            <PresentationLayout>
-              <Switch location={location} key={location.pathname}>
-                <motion.div
-                  initial="initial"
-                  animate="in"
-                  exit="out"
-                  variants={pageVariants}
-                  transition={pageTransition}
-                ></motion.div>
-              </Switch>
-            </PresentationLayout> */}
+
             <Route exact path="/Login" component={Login}></Route>
             <Route exact path="/Register" component={Register}></Route>
 

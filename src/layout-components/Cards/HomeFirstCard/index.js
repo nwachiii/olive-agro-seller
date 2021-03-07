@@ -20,7 +20,7 @@ export default function HomeFirstCard() {
                   {user ? ` ${user.firstName} ${user.lastName}` : ""}
                 </h1>
                 <a className="text-black-50 pt-2" href="/#">
-                  <h5>View Profile</h5>
+                  {user ? <h5>View Profile</h5> : ""}
                 </a>
               </div>
             </div>
