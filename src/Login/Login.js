@@ -62,10 +62,7 @@ const Login = ({ login, isAuthenticated }) => {
     <>
       <MetaTags>
         <title>Olive Agro | Login</title>
-        <meta
-          name="description"
-          content="Login and Register page for olive agro admin "
-        />
+        <meta name="description" content="Login page for olive agro admin " />
       </MetaTags>
 
       <Grid>
@@ -74,7 +71,7 @@ const Login = ({ login, isAuthenticated }) => {
             <Avatar style={avatarStyle}>
               <LockOutlinedIcon />
             </Avatar>
-            <h4>Login</h4>
+            <h4>Admin Login</h4>
           </Grid>
           <form onSubmit={(e) => handleSubmit(e)}>
             <TextField

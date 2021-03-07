@@ -81,10 +81,10 @@ const Register = ({ register, isAuthenticated }) => {
   return (
     <>
       <MetaTags>
-        <title>Olive Agro | Login</title>
+        <title>Olive Agro | Register</title>
         <meta
           name="description"
-          content="Login and Register page for olive agro admin "
+          content="Register page for olive agro admin "
         />
       </MetaTags>
 
@@ -98,7 +98,7 @@ const Register = ({ register, isAuthenticated }) => {
               <Nav variant="pills" className="login-register-tab-list">
                 <Nav.Item>
                   <Nav.Link eventKey="register">
-                    <h4>Register</h4>
+                    <h4>Admin Registration</h4>
                   </Nav.Link>
                 </Nav.Item>
               </Nav>
