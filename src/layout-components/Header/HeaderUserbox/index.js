@@ -4,7 +4,7 @@ import { connect } from "react-redux";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { Avatar, Box, Menu, Button, Hidden } from "@material-ui/core";
 
-import { logout } from "../../redux/actions/auth";
+import { logout } from "../../../redux/actions/auth";
 import AuthLists from "./AuthLists";
 import GuestsLists from "./GuestsLists";
 
@@ -35,7 +35,7 @@ function HeaderUserbox({ auth, logout }) {
               {user ? `Welcome, ${user.firstName}` : ""}
             </h6>
           </Hidden>
-          <Avatar sizes="44" alt={user ? user.firstName : ""} src={Avatar} />
+          <Avatar sizes="44" alt={user ? user.firstName : ""} source={Avatar} />
         </Box>
         <div className="d-none d-xl-block pl-3">
           <div className="font-weight-bold pt-2 line-height-1">

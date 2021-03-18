@@ -3,18 +3,11 @@ import { useDispatch, useSelector } from "react-redux";
 import MetaTags from "react-meta-tags";
 import { listCategories } from "../../../redux/actions/categoriesActions";
 
-import {
-  Grid,
-  Card,
-  CardContent,
-  Button,
-  DialogContentText,
-} from "@material-ui/core";
-import { DeleteModal } from "../Modals/DeleteModal";
+import { Grid, Card, CardContent } from "@material-ui/core";
+import DeleteModal from "../Modals/DeleteModal";
+import EditModal from "../Modals/EditModal";
 
 function ShowCategories() {
-  const [open3, setOpen3] = useState(false);
-  const [scroll, setScroll] = useState("paper");
   const categoryList = useSelector((state) => state.categoryList);
   const { categories, loading } = categoryList;
   console.log(categoryList);
@@ -24,25 +17,6 @@ function ShowCategories() {
   useEffect(() => {
     dispatch(listCategories());
   }, [dispatch]);
-
-  const handleClickOpen3 = (scrollType) => () => {
-    setOpen3(true);
-    setScroll(scrollType);
-  };
-
-  const handleClose3 = () => {
-    setOpen3(false);
-  };
-
-  const descriptionElementRef = React.useRef(null);
-  React.useEffect(() => {
-    if (open3) {
-      const { current: descriptionElement } = descriptionElementRef;
-      if (descriptionElement !== null) {
-        descriptionElement.focus();
-      }
-    }
-  }, [open3]);
 
   return (
     <>
@@ -67,34 +41,8 @@ function ShowCategories() {
                     {category.name}
                   </h5>
                   <div className="my-3 d-flex flex-wrap">
-                    {
-                      <DeleteModal
-                        open3={open3}
-                        handleClose3={handleClose3}
-                        scroll={scroll}
-                        DialogContentText={DialogContentText}
-                        descriptionElementRef={descriptionElementRef}
-                      />
-                    }
-                    <Button
-                      size="md"
-                      style={{
-                        color: "white",
-                        backgroundColor: "#0e9146",
-                        marginRight: "1.5em",
-                      }}
-                      className="px-4"
-                    >
-                      EDIT
-                    </Button>
-                    <Button
-                      size="md"
-                      style={{ color: "white", backgroundColor: "red" }}
-                      className="px-4"
-                      onClick={handleClickOpen3("paper")}
-                    >
-                      DELETE
-                    </Button>
+                    <div>{<EditModal category={category} />}</div>
+                    <div>{<DeleteModal category={category} />}</div>
                   </div>
                 </CardContent>
               </Card>

@@ -9,23 +9,14 @@ import MuiTheme from "./theme";
 // Layout Blueprints
 
 import { LeftSidebar } from "./layout-blueprints";
-// import { PresentationLayout } from "./layout-blueprints";
 
 // layout-components
 import Inbox from "./layout-components/Inbox";
 import AllOrders from "./layout-components/OliveOrders/AllOrders";
 import AddCategory from "./layout-components/Categories/AddCategory";
 import SeeAllCategories from "./layout-components/Categories/SeeAllCategories";
-import FruitsVeg from "./layout-components/Products/FruitsVeg";
-import Drinks from "./layout-components/Products/Drinks";
-import Spices from "./layout-components/Products/Spices";
-import DryHerbs from "./layout-components/Products/DryHerbs";
-import Legumes from "./layout-components/Products/Legumes";
-import Flours from "./layout-components/Products/Flours";
-import Oils from "./layout-components/Products/Oils";
-import Customers from "./layout-components/ViewUsers/Customers";
-import PendingVendors from "./layout-components/ViewUsers/Vendors/PendingVendors";
-import RegisteredVendors from "./layout-components/ViewUsers/Vendors/RegisteredVendors";
+import PendingVendors from "./layout-components/Vendors/PendingVendors";
+import RegisteredVendors from "./layout-components/Vendors/RegisteredVendors";
 
 const Home = lazy(() => import("./layout-components/Home"));
 
@@ -81,13 +72,6 @@ const Routes = () => {
                 "/Inbox",
                 "/AddCategory",
                 "/SeeAllCategories",
-                "/FruitsVeg",
-                "/Spices",
-                "/Drinks",
-                "/DryHerbs",
-                "/Legumes",
-                "/Oils",
-                "/Flours",
                 "/PendingVendors",
                 "/RegisteredVendors",
                 "/Customers",
@@ -113,19 +97,11 @@ const Routes = () => {
                       path="/SeeAllCategories"
                       component={SeeAllCategories}
                     />
-                    <Route path="/FruitsVeg" component={FruitsVeg} />
-                    <Route path="/Spices" component={Spices} />
-                    <Route path="/Drinks" component={Drinks} />
-                    <Route path="/DryHerbs" component={DryHerbs} />
-                    <Route path="/Legumes" component={Legumes} />
-                    <Route path="/Oils" component={Oils} />
-                    <Route path="/Flours" component={Flours} />
                     <Route path="/PendingVendors" component={PendingVendors} />
                     <Route
                       path="/RegisteredVendors"
                       component={RegisteredVendors}
                     />
-                    <Route path="/Customers" component={Customers} />
                   </motion.div>
                 </Switch>
               </LeftSidebar>
