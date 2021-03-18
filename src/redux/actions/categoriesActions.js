@@ -19,3 +19,25 @@ export const listCategories = () => async (dispatch) => {
     console.log(error);
   }
 };
+
+//Get ImageUrl from Cloudinary
+export const getImageUrl = async ({ imageUrl }) => {
+  const image = new FormData();
+  image.append("image", imageUrl);
+  const config = {
+    headers: {
+      "Content-Type": "application/json",
+    },
+  };
+  try {
+    const res = await axios.post(
+      "https://www.api.oliveagro.org/api/users/upload",
+      image,
+      config
+    );
+    console.log(res.data.image);
+    return res.data.image;
+  } catch (error) {
+    console.log(error);
+  }
+};

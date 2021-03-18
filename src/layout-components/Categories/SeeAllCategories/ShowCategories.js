@@ -1,4 +1,4 @@
-import React, { useState, useEffect } from "react";
+import React, { useEffect } from "react";
 import { useDispatch, useSelector } from "react-redux";
 import MetaTags from "react-meta-tags";
 import { listCategories } from "../../../redux/actions/categoriesActions";
@@ -21,8 +21,8 @@ function ShowCategories() {
   return (
     <>
       <MetaTags>
-        <title>All Products</title>
-        <meta name="Display Products" content="Display Products." />
+        <title>All Categories</title>
+        <meta name="Display Categories" content="Display Categories" />
       </MetaTags>
       <Grid container spacing={4}>
         {loading ? (

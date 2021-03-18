@@ -1,17 +1,13 @@
 import React, { useState } from "react";
 import axios from "axios";
 import { Grid, Card, TextField, Divider, Button } from "@material-ui/core";
-import { getImageUrl } from "../../../redux/actions/categoriesActions";
 
-function AddCategory() {
+function AddSubCategory() {
   const [category, setCategory] = useState("");
-  const [productImg, setProductImg] = useState(null);
+  const [subCategory, setSubCategory] = useState("");
 
   const handleSubmit = async (e) => {
     e.preventDefault();
-    const productImage = await getImageUrl({
-      productImg,
-    });
 
     const token = localStorage.getItem("token");
     const config = {
@@ -21,13 +17,13 @@ function AddCategory() {
     };
 
     const body = JSON.stringify({
-      name: category,
-      imageUrl: productImage,
+      name: subCategory,
+      category_name: category,
     });
 
     try {
       await axios.post(
-        "https://www.api.oliveagro.org/api/category/create",
+        "https://www.api.oliveagro.org/api/subCategory/create",
         body,
         config
       );
@@ -39,7 +35,7 @@ function AddCategory() {
     <Grid container spacing={4}>
       <Grid item xs={12} lg={6}>
         <Card className="p-4 mb-4">
-          <div className="font-size-lg font-weight-bold">Add category</div>
+          <div className="font-size-lg font-weight-bold">Add Sub-category</div>
           <Divider className="my-4" />
           <Grid container spacing={4}>
             <Grid item xs={12} lg={12}>
@@ -49,7 +45,17 @@ function AddCategory() {
               >
                 <TextField
                   fullWidth
-                  className="m-2"
+                  className="m-3"
+                  id="outlined-basic"
+                  label="category name"
+                  variant="outlined"
+                  onChange={(e) => setSubCategory(e.target.value)}
+                  value={subCategory}
+                  required
+                />
+                <TextField
+                  fullWidth
+                  className="m-3"
                   id="outlined-basic"
                   label="category name"
                   variant="outlined"
@@ -57,28 +63,11 @@ function AddCategory() {
                   value={category}
                   required
                 />
-                <Grid
-                  item
-                  xs={12}
-                  lg={12}
-                  className="d-flex flex-column my-3 align-items-center "
-                >
-                  <label className="text-ash align-self-start ml-3">
-                    Category Image:
-                  </label>
-                  <input
-                    type="file"
-                    placeholder=""
-                    name={productImg}
-                    onChange={(e) => setProductImg(e.target.files[0])}
-                    required
-                  />
-                </Grid>
 
                 <Button
                   onClick={handleSubmit}
                   className="px-6 mx-auto my-3"
-                  size="xl"
+                  size="lg"
                   variant="contained"
                   type="submit"
                   style={{
@@ -90,7 +79,7 @@ function AddCategory() {
                     margin: "3px auto",
                   }}
                 >
-                  ADD NEW CATEGORY
+                  ADD NEW SUB CATEGORY
                 </Button>
               </form>
             </Grid>
@@ -101,4 +90,4 @@ function AddCategory() {
   );
 }
 
-export default AddCategory;
+export default AddSubCategory;

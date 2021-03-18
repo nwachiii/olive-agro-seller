@@ -14,6 +14,7 @@ import { LeftSidebar } from "./layout-blueprints";
 import Inbox from "./layout-components/Inbox";
 import AllOrders from "./layout-components/OliveOrders/AllOrders";
 import AddCategory from "./layout-components/Categories/AddCategory";
+import AddSubCategory from "./layout-components/Categories/AddSubCategory";
 import SeeAllCategories from "./layout-components/Categories/SeeAllCategories";
 import PendingVendors from "./layout-components/Vendors/PendingVendors";
 import RegisteredVendors from "./layout-components/Vendors/RegisteredVendors";
@@ -71,6 +72,7 @@ const Routes = () => {
                 "/Home",
                 "/Inbox",
                 "/AddCategory",
+                "/AddSubCategory",
                 "/SeeAllCategories",
                 "/PendingVendors",
                 "/RegisteredVendors",
@@ -93,6 +95,7 @@ const Routes = () => {
 
                     <Route path="/AllOrders" component={AllOrders} />
                     <Route path="/AddCategory" component={AddCategory} />
+                    <Route path="/AddSubCategory" component={AddSubCategory} />
                     <Route
                       path="/SeeAllCategories"
                       component={SeeAllCategories}

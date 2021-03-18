@@ -1,7 +1,7 @@
 import React, { Fragment } from "react";
 import PropTypes from "prop-types";
 import { connect } from "react-redux";
-import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
+// import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { Avatar, Box, Menu, Button, Hidden } from "@material-ui/core";
 
 import { logout } from "../../../redux/actions/auth";
@@ -35,7 +35,7 @@ function HeaderUserbox({ auth, logout }) {
               {user ? `Welcome, ${user.firstName}` : ""}
             </h6>
           </Hidden>
-          <Avatar sizes="44" alt={user ? user.firstName : ""} source={Avatar} />
+          <Avatar sizes="44" alt={user ? user.firstName : ""} />
         </Box>
         <div className="d-none d-xl-block pl-3">
           <div className="font-weight-bold pt-2 line-height-1">
@@ -44,7 +44,7 @@ function HeaderUserbox({ auth, logout }) {
           <span className="text-white-50 text-center">Admin</span>
         </div>
         <span className="pl-1 pl-xl-3">
-          <FontAwesomeIcon icon={["fas", "angle-down"]} className="opacity-5" />
+          {/* <FontAwesomeIcon icon={["fas", "angle-down"]} className="opacity-5" /> */}
         </span>
       </Button>
 

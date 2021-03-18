@@ -77,7 +77,7 @@ function SimpleModal({ PendingVendor }) {
       <form id="simple-modal-description">
         <div className="form_input">
           <label for="name" className="label">
-            Company name
+            Company name:
           </label>
           <input
             className="input"
@@ -87,7 +87,7 @@ function SimpleModal({ PendingVendor }) {
           />
         </div>
         <div className="form_input">
-          <label for="email">Company email</label>
+          <label for="email">Company email:</label>
           <input
             className="input"
             type="email"
@@ -97,7 +97,7 @@ function SimpleModal({ PendingVendor }) {
         </div>
         <div className="form_input">
           <label for="address" className="label">
-            Company Address
+            Company Address:
           </label>
           <input
             className="input"
@@ -108,29 +108,29 @@ function SimpleModal({ PendingVendor }) {
         </div>
         <div className="form_input">
           <label for="number" className="label">
-            Phone number
+            Phone number:
           </label>
           <input
             className="input"
-            type="number"
+            type="text"
             value={PendingVendor.phoneNumber}
-            name="number"
+            name="text"
           />
         </div>
         <div className="form_input">
           <label for="cac" className="label">
-            cac
+            cac:
           </label>
           <input
             className="input"
-            type="number"
+            type="text"
             value={PendingVendor.cac}
-            name="number"
+            name="text"
           />
         </div>
         <div className="form_input">
           <label for="document" className="label">
-            Document
+            Document:
           </label>
           <img alt="img" src={PendingVendor.ID[0].documentUrl} />
         </div>

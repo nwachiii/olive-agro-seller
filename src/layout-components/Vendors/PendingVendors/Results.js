@@ -46,6 +46,7 @@ const Results = ({ className, PendingVendors, ...rest }) => {
         setData(response.data);
       })
       .catch((err) => console.log(err));
+    // eslint-disable-next-line
   }, []);
 
   console.log("my data", data);

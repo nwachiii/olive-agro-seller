@@ -1,14 +1,14 @@
-import React from 'react';
-import { matchPath } from 'react-router-dom';
+import React from "react";
+import { matchPath } from "react-router-dom";
 
-import PropTypes from 'prop-types';
+import PropTypes from "prop-types";
 
-import { List, Typography } from '@material-ui/core';
+import { List, Typography } from "@material-ui/core";
 
-import useRouter from 'utils/useRouter';
-import SidebarMenuListItem from './SidebarMenuListItem';
+import useRouter from "../../../utils/useRouter";
+import SidebarMenuListItem from "./SidebarMenuListItem";
 
-const SidebarMenuList = props => {
+const SidebarMenuList = (props) => {
   const { pages, ...rest } = props;
 
   return (
@@ -23,16 +23,16 @@ const SidebarMenuList = props => {
 
 SidebarMenuList.propTypes = {
   depth: PropTypes.number,
-  pages: PropTypes.array
+  pages: PropTypes.array,
 };
 
-const reduceChildRoutes = props => {
+const reduceChildRoutes = (props) => {
   const { router, items, page, depth } = props;
 
   if (page.content) {
     const open = matchPath(router.location.pathname, {
       path: page.to,
-      exact: false
+      exact: false,
     });
 
     items.push(
@@ -42,7 +42,8 @@ const reduceChildRoutes = props => {
         key={page.label}
         label={page.badge}
         open={Boolean(open)}
-        title={page.label}>
+        title={page.label}
+      >
         <div className="sidebar-menu-children py-2">
           <SidebarMenuList
             depth={depth + 1}
@@ -68,7 +69,7 @@ const reduceChildRoutes = props => {
   return items;
 };
 
-const SidebarMenu = props => {
+const SidebarMenu = (props) => {
   const { title, pages, className, component: Component, ...rest } = props;
 
   const router = useRouter();
@@ -87,11 +88,11 @@ SidebarMenu.propTypes = {
   className: PropTypes.string,
   component: PropTypes.any,
   pages: PropTypes.array.isRequired,
-  title: PropTypes.string
+  title: PropTypes.string,
 };
 
 SidebarMenu.defaultProps = {
-  component: 'nav'
+  component: "nav",
 };
 
 export default SidebarMenu;
