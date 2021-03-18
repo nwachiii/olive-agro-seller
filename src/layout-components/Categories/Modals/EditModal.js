@@ -1,65 +1,145 @@
 import React from "react";
-import {
-  Dialog,
-  DialogActions,
-  DialogContent,
-  DialogTitle,
-  Button,
-} from "@material-ui/core";
-import VendorInfo from "./VendorInfo";
+import { makeStyles } from "@material-ui/core/styles";
+import { Modal } from "@material-ui/core";
+import axios from "axios";
 
-export const EditModal = (Props) => {
-  const {
-    open3,
-    handleClose3,
-    scroll,
-    DialogContentText,
-    descriptionElementRef,
-    vendorId,
-  } = Props;
-  return (
-    <Dialog
-      open={open3}
-      onClose={handleClose3}
-      scroll={scroll}
-      aria-labelledby="scroll-dialog-title"
-      aria-describedby="scroll-dialog-description"
-    >
-      <DialogTitle id="scroll-dialog-title">
-        <h4 className="mb-0">Vendor Documents</h4>
-      </DialogTitle>
-      <DialogContent dividers={scroll === "paper"}>
-        <DialogContentText
-          id="scroll-dialog-description"
-          ref={descriptionElementRef}
-          tabIndex={2}
-        >
-          {/* Modal content comes in here */}
-          <VendorInfo vendorId={vendorId} />
-        </DialogContentText>
-      </DialogContent>
-      <DialogActions className="justify-content-center flex-wrap py-4">
-        <Button
-          onClick={handleClose3}
+function rand() {
+  return Math.round(Math.random() * 20) - 10;
+}
+
+function getModalStyle() {
+  const top = 50 + rand();
+  const left = 50 + rand();
+
+  return {
+    top: `${top}%`,
+    left: `${left}%`,
+    transform: `translate(-${top}%, -${left}%)`,
+  };
+}
+
+const useStyles = makeStyles((theme) => ({
+  paper: {
+    position: "relative",
+    width: 400,
+    height: 250,
+    backgroundColor: theme.palette.background.paper,
+    border: "1px solid lightgray",
+    borderRadius: "10px",
+    boxShadow: theme.shadows[5],
+    padding: theme.spacing(2, 4, 3),
+    display: "flex",
+    flexDirection: "column",
+    alignContent: "center",
+    justifyContent: "center",
+  },
+}));
+
+function EditModal({ category }) {
+  const classes = useStyles();
+  // getModalStyle is not a pure function, we roll the style only on the first render
+  const [modalStyle] = React.useState(getModalStyle);
+  const [open, setOpen] = React.useState(false);
+
+  const handleOpen = () => {
+    setOpen(true);
+  };
+
+  const handleClose = () => {
+    setOpen(false);
+  };
+
+  const handleDeleteCategory = async (e) => {
+    e.preventDefault();
+
+    const token = localStorage.getItem("token");
+
+    const config = {
+      headers: {
+        Authorization: `Bearer ${token}`,
+      },
+    };
+    try {
+      await axios.patch(
+        `https://www.api.oliveagro.org/api/category/${category._id}`,
+        config
+      );
+      handleClose();
+    } catch (error) {
+      console.log(error);
+    }
+  };
+
+  const body = (
+    <div style={modalStyle} className={classes.paper}>
+      <h3 id="simple-modal-title">Edit Category</h3>
+      <form className="d-flex p-3 flex-wrap direction-column mb-3">
+        <input
+          type="text"
+          defaultValue={category.name}
+          name="category name"
+          style={{
+            padding: "0.5em 7px",
+            borderRadius: "10px",
+            border: "1px solid lightgray",
+            margin: "0 auto",
+          }}
+        />
+      </form>
+      <div
+        style={{
+          display: "flex",
+          justifyContent: "center",
+        }}
+      >
+        <button
+          onClick={handleDeleteCategory}
           style={{
             color: "white",
             backgroundColor: "#0e9146",
-            width: "200px",
+            width: "100px",
           }}
         >
-          SAVE
-        </Button>
-        <Button
-          onClick={handleClose3}
+          Save
+        </button>
+        <button
+          onClick={handleClose}
           style={{
             color: "white",
             backgroundColor: "red",
-            width: "200px",
+            width: "100px",
+            marginLeft: "1em",
           }}
         >
-          CANCEL
-        </Button>
-      </DialogActions>
-    </Dialog>
+          Cancel
+        </button>
+      </div>
+    </div>
   );
-};
+
+  return (
+    <div>
+      <button
+        type="button"
+        onClick={handleOpen}
+        style={{
+          color: "white",
+          backgroundColor: "#0e9146",
+          width: "100px",
+        }}
+      >
+        Edit
+      </button>
+      <Modal
+        open={open}
+        onClose={handleClose}
+        aria-labelledby="simple-modal-title"
+        aria-describedby="simple-modal-description"
+      >
+        {body}
+      </Modal>
+    </div>
+  );
+}
+
+export default EditModal;

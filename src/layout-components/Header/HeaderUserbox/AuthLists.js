@@ -7,7 +7,7 @@ const AuthLists = ({ userName, logout }) => {
     <>
       <List className="text-left bg-transparent d-flex align-items-center flex-column pt-0">
         <Box>
-          <Avatar sizes="44" alt={userName} src={Avatar} />
+          <Avatar sizes="44" alt={userName} source={Avatar} />
         </Box>
         <div className="pl-3  pr-3">
           <div className="font-weight-bold text-center pt-2 pb-1 line-height-1">

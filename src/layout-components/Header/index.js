@@ -10,8 +10,8 @@ import { connect } from "react-redux";
 import { setSidebarToggleMobile } from "../../redux/reducers/ThemeOptions";
 import projectLogo from "../../assets/images/Asset 3.png";
 
-import HeaderLogo from "../../layout-components/HeaderLogo";
-import HeaderUserbox from "../../layout-components/HeaderUserbox";
+import HeaderLogo from "../../layout-components/Header/HeaderLogo";
+import HeaderUserbox from "../../layout-components/Header/HeaderUserbox";
 
 import MenuOpenRoundedIcon from "@material-ui/icons/MenuOpenRounded";
 import MenuRoundedIcon from "@material-ui/icons/MenuRounded";

@@ -1,20 +1,20 @@
-import React, { useState } from 'react';
-import { Grid, Card, TextField, Divider, Button } from '@material-ui/core';
+import React, { useState } from "react";
+import { Grid, Card, TextField, Divider, Button } from "@material-ui/core";
 
 function AddCategory() {
   const [categories, setCategories] = useState([]);
-  const [category, setCategory] = useState('');
+  const [category, setCategory] = useState("");
 
-  const handleSubmit = e => {
+  const handleSubmit = (e) => {
     e.preventDefault();
 
     const newCategory = {
       id: new Date().getTime(),
-      text: category
+      text: category,
     };
 
     setCategories([...categories].concat(newCategory));
-    setCategory('');
+    setCategory("");
   };
   return (
     <Grid container spacing={4}>
@@ -26,14 +26,15 @@ function AddCategory() {
             <Grid item xs={12} lg={12}>
               <form
                 onSubmit={handleSubmit}
-                className="d-flex p-3 flex-wrap direction-column">
+                className="d-flex p-3 flex-wrap direction-column"
+              >
                 <TextField
                   fullWidth
                   className="m-2"
                   id="outlined-basic"
                   label="category name"
                   variant="outlined"
-                  onChange={e => setCategory(e.target.value)}
+                  onChange={(e) => setCategory(e.target.value)}
                   value={category}
                 />
                 <TextField
@@ -42,7 +43,7 @@ function AddCategory() {
                   id="outlined-basic"
                   label="sub-category"
                   variant="outlined"
-                  onChange={e => setCategory(e.target.value)}
+                  onChange={(e) => setCategory(e.target.value)}
                   value={category}
                 />
                 <Button
@@ -50,7 +51,8 @@ function AddCategory() {
                   size="xl"
                   variant="contained"
                   type="submit"
-                  style={{ color: 'white', backgroundColor: '#0e9146' }}>
+                  style={{ color: "white", backgroundColor: "#0e9146" }}
+                >
                   Submit
                 </Button>
               </form>
