@@ -47,7 +47,7 @@ function AddSubCategory() {
                   fullWidth
                   className="m-3"
                   id="outlined-basic"
-                  label="category name"
+                  label="sub-category name"
                   variant="outlined"
                   onChange={(e) => setSubCategory(e.target.value)}
                   value={subCategory}

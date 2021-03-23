@@ -32,7 +32,6 @@ const useStyles = makeStyles((theme) => ({
 }));
 
 function SimpleModal({ PendingVendor }) {
-  console.log("Modal", PendingVendor);
   const classes = useStyles();
   const [modalStyle] = React.useState(getModalStyle);
   const [open, setOpen] = React.useState(false);

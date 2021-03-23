@@ -1,4 +1,5 @@
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
+import axios from "axios";
 import clsx from "clsx";
 import PropTypes from "prop-types";
 import PerfectScrollbar from "react-perfect-scrollbar";
@@ -11,7 +12,6 @@ import {
   TableBody,
   TableCell,
   TableHead,
-  // TablePagination,
   TableRow,
   Typography,
   makeStyles,
@@ -26,6 +26,27 @@ const useStyles = makeStyles((theme) => ({
 }));
 
 const Results = ({ className, count, RegisteredVendors, ...rest }) => {
+  const [data, setData] = useState([]);
+  const token = localStorage.getItem("token");
+  const config = {
+    headers: {
+      Authorization: `Bearer ${token}`,
+    },
+  };
+  useEffect(() => {
+    axios
+      .get(
+        "https://www.api.oliveagro.org/api/merchant/list/all?status=ACTIVATED",
+        config
+      )
+      .then((response) => {
+        console.log("Registered vendors response:", response);
+        setData(response.data);
+      })
+      .catch((err) => console.log(err));
+    // eslint-disable-next-line
+  }, []);
+
   const classes = useStyles();
   const [
     selectedRegisteredVendorIds,
@@ -38,8 +59,8 @@ const Results = ({ className, count, RegisteredVendors, ...rest }) => {
 
     if (event.target.checked) {
       newSelectedRegisteredVendorIds =
-        RegisteredVendors &&
-        RegisteredVendors.map((RegisteredVendor) => RegisteredVendor._id);
+        data.merchants &&
+        data.merchants.map((RegisteredVendor) => RegisteredVendor._id);
     } else {
       newSelectedRegisteredVendorIds = [];
     }
@@ -78,58 +99,50 @@ const Results = ({ className, count, RegisteredVendors, ...rest }) => {
               </TableRow>
             </TableHead>
             <TableBody>
-              {RegisteredVendors &&
-                RegisteredVendors.map((RegisteredVendor) => (
-                  <TableRow
-                    hover
-                    key={RegisteredVendor._id}
-                    selected={
-                      selectedRegisteredVendorIds.indexOf(
-                        RegisteredVendor._id
-                      ) !== -1
-                    }
-                  >
-                    <TableCell padding="checkbox">
-                      <Checkbox
-                        checked={
-                          selectedRegisteredVendorIds.indexOf(
-                            RegisteredVendor._id
-                          ) !== -1
-                        }
-                        onChange={(event) =>
-                          handleSelectOne(event, RegisteredVendor._id)
-                        }
-                        value="true"
-                      />
-                    </TableCell>
-                    <TableCell>
-                      <Box alignItems="center" display="flex">
-                        <Avatar className={classes.avatar} src={avatarUrl}>
-                          {getInitials(RegisteredVendor.companyName)}
-                        </Avatar>
-                        <Typography color="textPrimary" variant="body1">
-                          {RegisteredVendor.companyName}
-                        </Typography>
-                      </Box>
-                    </TableCell>
-                    <TableCell>{RegisteredVendor.email}</TableCell>
-                    <TableCell>{RegisteredVendor.companyAddress}</TableCell>
-                    <TableCell>{RegisteredVendor.phoneNumber}</TableCell>
-                  </TableRow>
-                ))}
+              {!data.merchants
+                ? null
+                : data.merchants.map((RegisteredVendor) => (
+                    <TableRow
+                      hover
+                      key={RegisteredVendor._id}
+                      selected={
+                        selectedRegisteredVendorIds.indexOf(
+                          RegisteredVendor._id
+                        ) !== -1
+                      }
+                    >
+                      <TableCell padding="checkbox">
+                        <Checkbox
+                          checked={
+                            selectedRegisteredVendorIds.indexOf(
+                              RegisteredVendor._id
+                            ) !== -1
+                          }
+                          onChange={(event) =>
+                            handleSelectOne(event, RegisteredVendor._id)
+                          }
+                          value="true"
+                        />
+                      </TableCell>
+                      <TableCell>
+                        <Box alignItems="center" display="flex">
+                          <Avatar className={classes.avatar} src={avatarUrl}>
+                            {getInitials(RegisteredVendor.companyName)}
+                          </Avatar>
+                          <Typography color="textPrimary" variant="body1">
+                            {RegisteredVendor.companyName}
+                          </Typography>
+                        </Box>
+                      </TableCell>
+                      <TableCell>{RegisteredVendor.email}</TableCell>
+                      <TableCell>{RegisteredVendor.companyAddress}</TableCell>
+                      <TableCell>{RegisteredVendor.phoneNumber}</TableCell>
+                    </TableRow>
+                  ))}
             </TableBody>
           </Table>
         </Box>
       </PerfectScrollbar>
-      {/* <TablePagination
-        component="div"
-        count={count}
-        onChangePage={handlePageChange}
-        onChangeRowsPerPage={handleLimitChange}
-        page={page}
-        rowsPerPage={limit}
-        rowsPerPageOptions={[5, 10, 25]}
-      /> */}
     </Card>
   );
 };

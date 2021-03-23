@@ -42,14 +42,12 @@ const Results = ({ className, PendingVendors, ...rest }) => {
         config
       )
       .then((response) => {
-        console.log("response", response);
+        console.log("Pending vendors response: ", response);
         setData(response.data);
       })
       .catch((err) => console.log(err));
     // eslint-disable-next-line
   }, []);
-
-  console.log("my data", data);
 
   const classes = useStyles();
   const [selectedPendingVendorIds, setSelectedPendingVendorIds] = useState([]);
@@ -60,8 +58,8 @@ const Results = ({ className, PendingVendors, ...rest }) => {
 
     if (event.target.checked) {
       newSelectedPendingVendorIds =
-        PendingVendors &&
-        PendingVendors.map((PendingVendor) => PendingVendor._id);
+        data.merchants &&
+        data.merchants.map((PendingVendor) => PendingVendor._id);
     } else {
       newSelectedPendingVendorIds = [];
     }
