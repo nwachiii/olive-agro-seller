@@ -6,6 +6,7 @@ import { listCategories } from "../../../redux/actions/categoriesActions";
 import { Grid, Card, CardContent } from "@material-ui/core";
 import DeleteModal from "../Modals/DeleteModal";
 import EditModal from "../Modals/EditModal";
+import { Link } from "react-router-dom";
 
 function ShowCategories() {
   const categoryList = useSelector((state) => state.categoryList);
@@ -31,11 +32,13 @@ function ShowCategories() {
           categories.map((category, index) => (
             <Grid key={index} item xs={12} sm={6} md={4}>
               <Card className="mb-4">
-                <img
-                  alt={category.name}
-                  className="card-img-top .card-img-overlay"
-                  src={category.imageUrl}
-                />
+                <Link to={`/subCategories/${category._id}`}>
+                  <img
+                    alt={category.name}
+                    className="card-img-top .card-img-overlay"
+                    src={category.imageUrl}
+                  />
+                </Link>
                 <CardContent className="p-3">
                   <h5 className="card-title font-weight-bold font-size-lg flex-wrap">
                     {category.name}

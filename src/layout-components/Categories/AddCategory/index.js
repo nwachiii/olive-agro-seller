@@ -1,18 +1,41 @@
 import React, { useState } from "react";
 import axios from "axios";
 import { Grid, Card, TextField, Divider, Button } from "@material-ui/core";
-import { getImageUrl } from "../../../redux/actions/categoriesActions";
+import AddCategoryModal from "./AddCategoryModal";
 
 function AddCategory() {
-  const [category, setCategory] = useState("");
-  const [productImg, setProductImg] = useState(null);
+  const [name, setName] = useState("");
+  const [catImg, setCatImg] = useState(null);
+
+  const reset = () => {
+    setName("");
+    setCatImg("");
+  };
+
+  const getImageUrl = async () => {
+    const image = new FormData();
+    image.append("image", catImg);
+    const config = {
+      headers: {
+        "Content-Type": "application/json",
+      },
+    };
+    try {
+      const res = await axios.post(
+        "https://www.api.oliveagro.org/api/users/upload",
+        image,
+        config
+      );
+      return res.data.image;
+    } catch (error) {
+      console.log(error.response.data.message);
+    }
+  };
 
   const handleSubmit = async (e) => {
     e.preventDefault();
-    const productImage = await getImageUrl({
-      productImg,
-    });
-
+    const imageUrl = await getImageUrl();
+    //handle token
     const token = localStorage.getItem("token");
     const config = {
       headers: {
@@ -20,20 +43,17 @@ function AddCategory() {
       },
     };
 
-    const body = JSON.stringify({
-      name: category,
-      imageUrl: productImage,
-    });
-
+        
     try {
       await axios.post(
         "https://www.api.oliveagro.org/api/category/create",
-        body,
+        { name: name, imageUrl: imageUrl },
         config
-      );
+      ) 
     } catch (error) {
       console.log(error);
     }
+    reset();
   };
   return (
     <Grid container spacing={4}>
@@ -53,8 +73,8 @@ function AddCategory() {
                   id="outlined-basic"
                   label="category name"
                   variant="outlined"
-                  onChange={(e) => setCategory(e.target.value)}
-                  value={category}
+                  onChange={(e) => setName(e.target.value)}
+                  value={name}
                   required
                 />
                 <Grid
@@ -69,8 +89,8 @@ function AddCategory() {
                   <input
                     type="file"
                     placeholder=""
-                    name={productImg}
-                    onChange={(e) => setProductImg(e.target.files[0])}
+                    name={catImg}
+                    onChange={(e) => setCatImg(e.target.files[0])}
                     required
                   />
                 </Grid>

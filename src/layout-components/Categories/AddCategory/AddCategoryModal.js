@@ -1,7 +1,7 @@
 import React from "react";
 import { makeStyles } from "@material-ui/core/styles";
 import { Modal } from "@material-ui/core";
-import axios from "axios";
+import { useHistory } from "react-router";
 
 function rand() {
   return Math.round(Math.random() * 20) - 10;
@@ -35,7 +35,7 @@ const useStyles = makeStyles((theme) => ({
   },
 }));
 
-function DeleteModal({ category }) {
+function AddCategoryModal() {
   const classes = useStyles();
   // getModalStyle is not a pure function, we roll the style only on the first render
   const [modalStyle] = React.useState(getModalStyle);
@@ -49,32 +49,19 @@ function DeleteModal({ category }) {
     setOpen(false);
   };
 
-  const handleDeleteCategory = async (e) => {
+  let history = useHistory()
+  const handleAddCatSuccess = (e) => {
     e.preventDefault();
 
-    const token = localStorage.getItem("token");
+  handleClose()
+  history.push("/SeeAllCategories")
 
-    const config = {
-      headers: {
-        Authorization: `Bearer ${token}`,
-      },
-    };
-    try {
-      await axios.delete(
-        `https://www.api.oliveagro.org/api/category/${category._id}`,
-        config
-      );
-      handleClose();
-    } catch (error) {
-      console.log(error);
-    }
   };
 
   const body = (
     <div style={modalStyle} className={classes.paper}>
-      <h3 id="simple-modal-title">Delete Category</h3>
       <p id="simple-modal-description" className="my-2">
-        Are you sure you want to delete this category?
+        You have successfully added a new category!!
       </p>
       <div
         style={{
@@ -83,25 +70,14 @@ function DeleteModal({ category }) {
         }}
       >
         <button
-          onClick={handleDeleteCategory}
+          onClick={handleAddCatSuccess}
           style={{
             color: "white",
             backgroundColor: "#0e9146",
             width: "100px",
           }}
         >
-          Yes
-        </button>
-        <button
-          onClick={handleClose}
-          style={{
-            color: "white",
-            backgroundColor: "red",
-            width: "100px",
-            marginLeft: "1em",
-          }}
-        >
-          Cancel
+          SEE ALL CATEGORIES
         </button>
       </div>
     </div>
@@ -119,7 +95,7 @@ function DeleteModal({ category }) {
           marginLeft: "1em",
         }}
       >
-        Delete
+        AddCatButton
       </button>
       <Modal
         open={open}
@@ -133,4 +109,4 @@ function DeleteModal({ category }) {
   );
 }
 
-export default DeleteModal;
+export default AddCategoryModal;

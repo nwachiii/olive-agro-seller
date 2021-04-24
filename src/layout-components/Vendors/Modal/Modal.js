@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useState } from "react";
 import { makeStyles } from "@material-ui/core/styles";
 import { Modal } from "@material-ui/core";
 import axios from "axios";
@@ -35,6 +35,7 @@ function SimpleModal({ PendingVendor }) {
   const classes = useStyles();
   const [modalStyle] = React.useState(getModalStyle);
   const [open, setOpen] = React.useState(false);
+  const [status] = useState("ACTIVATED");
 
   const handleOpen = () => {
     setOpen(true);
@@ -47,26 +48,35 @@ function SimpleModal({ PendingVendor }) {
   const handleConfirmVendor = async (e) => {
     e.preventDefault();
 
-    const token = localStorage.getItem("token");
+    console.log("pending vendor userId", PendingVendor.user);
 
+    const token = localStorage.getItem("token");
+    console.log("token:", token);
     const config = {
       headers: {
         Authorization: `Bearer ${token}`,
       },
     };
+    console.log(status);
+    const body = JSON.stringify({
+      status,
+    });
+    console.log("body:", body);
     try {
-      const confirm = await axios.post(
-        `https://www.api.oliveagro.org/api/merchant/approve/${PendingVendor._id}`,
+     const res = await axios.post(
+        `https://www.api.oliveagro.org/api/merchant/activate/${PendingVendor.user}`,
+        { status: "ACTIVATED" },
         config
-      );
-      console.log("activate vendor", confirm);
+      ); 
+      console.log(res)
       handleClose();
     } catch (error) {
-      console.log(error);
+      console.log(error.response.data);
+      // alert(error.response.data.message);
     }
   };
 
-  const body = (
+  const modalBody = (
     <div style={modalStyle} className={classes.paper}>
       <h3 id="simple-modal-title">Vendor Data</h3>
       <p id="simple-modal-description">
@@ -171,7 +181,7 @@ function SimpleModal({ PendingVendor }) {
         aria-labelledby="simple-modal-title"
         aria-describedby="simple-modal-description"
       >
-        {body}
+        {modalBody}
       </Modal>
     </div>
   );

@@ -1,5 +1,6 @@
 import React from "react";
 import { makeStyles } from "@material-ui/core/styles";
+import { useHistory } from "react-router-dom";
 import { Modal } from "@material-ui/core";
 import axios from "axios";
 
@@ -22,7 +23,7 @@ const useStyles = makeStyles((theme) => ({
   paper: {
     position: "relative",
     width: 400,
-    height: 250,
+    height: 350,
     backgroundColor: theme.palette.background.paper,
     border: "1px solid lightgray",
     borderRadius: "10px",
@@ -35,7 +36,15 @@ const useStyles = makeStyles((theme) => ({
   },
 }));
 
+const inputStyle = {
+  padding: "0.5em 7px",
+  borderRadius: "10px",
+  border: "1px solid lightgray",
+  margin: "0 auto",
+};
+
 function EditModal({ category }) {
+  let history = useHistory();
   const classes = useStyles();
   // getModalStyle is not a pure function, we roll the style only on the first render
   const [modalStyle] = React.useState(getModalStyle);
@@ -49,7 +58,7 @@ function EditModal({ category }) {
     setOpen(false);
   };
 
-  const handleDeleteCategory = async (e) => {
+  const handleEditCategory = async (e) => {
     e.preventDefault();
 
     const token = localStorage.getItem("token");
@@ -59,32 +68,45 @@ function EditModal({ category }) {
         Authorization: `Bearer ${token}`,
       },
     };
+    const body = JSON.stringify({
+      name: category.name,
+    });
+
     try {
       await axios.patch(
         `https://www.api.oliveagro.org/api/category/${category._id}`,
+        body,
         config
       );
       handleClose();
     } catch (error) {
-      console.log(error);
+      console.log(error.response.data);
+      error.response.data.message === "jwt expired"
+        ? history.push("/Login")
+        : console.log(error.response.data.message);
     }
   };
 
-  const body = (
+  const modalBody = (
     <div style={modalStyle} className={classes.paper}>
       <h3 id="simple-modal-title">Edit Category</h3>
       <form className="d-flex p-3 flex-wrap direction-column mb-3">
         <input
           type="text"
           defaultValue={category.name}
+          onChange={(e) => e.target.value}
           name="category name"
-          style={{
-            padding: "0.5em 7px",
-            borderRadius: "10px",
-            border: "1px solid lightgray",
-            margin: "0 auto",
-          }}
+          style={inputStyle}
         />
+        <div className="mt-4 mb-3 d-flex direction-column">
+          <input
+            type="file"
+            placeholder=""
+            name={category.imageUrl}
+            onChange={(e) => e.target.files[0]}
+            required
+          />
+        </div>
       </form>
       <div
         style={{
@@ -93,7 +115,7 @@ function EditModal({ category }) {
         }}
       >
         <button
-          onClick={handleDeleteCategory}
+          onClick={handleEditCategory}
           style={{
             color: "white",
             backgroundColor: "#0e9146",
@@ -136,7 +158,7 @@ function EditModal({ category }) {
         aria-labelledby="simple-modal-title"
         aria-describedby="simple-modal-description"
       >
-        {body}
+        {modalBody}
       </Modal>
     </div>
   );

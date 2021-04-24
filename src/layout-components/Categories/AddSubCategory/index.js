@@ -6,6 +6,11 @@ function AddSubCategory() {
   const [category, setCategory] = useState("");
   const [subCategory, setSubCategory] = useState("");
 
+    const reset = () => {
+      setCategory("");
+      setSubCategory("");
+    };
+
   const handleSubmit = async (e) => {
     e.preventDefault();
 
@@ -16,20 +21,19 @@ function AddSubCategory() {
       },
     };
 
-    const body = JSON.stringify({
-      name: subCategory,
-      category_name: category,
-    });
-
     try {
       await axios.post(
         "https://www.api.oliveagro.org/api/subCategory/create",
-        body,
+        {
+          name: subCategory,
+          category_name: category,
+        },
         config
       );
     } catch (error) {
-      console.log(error);
+      console.log(error.response.data.message);
     }
+    reset();
   };
   return (
     <Grid container spacing={4}>

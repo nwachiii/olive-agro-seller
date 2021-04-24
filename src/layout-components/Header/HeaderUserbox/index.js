@@ -1,7 +1,6 @@
 import React, { Fragment } from "react";
 import PropTypes from "prop-types";
 import { connect } from "react-redux";
-// import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { Avatar, Box, Menu, Button, Hidden } from "@material-ui/core";
 
 import { logout } from "../../../redux/actions/auth";
@@ -19,8 +18,7 @@ function HeaderUserbox({ auth, logout }) {
     setAnchorEl(null);
   };
 
-  //grab auth and user
-  const { isAuthenticated } = auth;
+  //grab loaded user
   const user = JSON.parse(localStorage.getItem("user"));
   return (
     <Fragment>
@@ -32,7 +30,7 @@ function HeaderUserbox({ auth, logout }) {
         <Box className="d-flex flex-wrap">
           <Hidden smDown>
             <h6 className="text-white-80 text-center my-auto mx-3">
-              {user ? `Welcome, ${user.firstName}` : ""}
+              {user ? `Welcome, ${user.firstName}` : "Login/Register"}
             </h6>
           </Hidden>
           <Avatar sizes="44" alt={user ? user.firstName : ""} />
@@ -65,7 +63,7 @@ function HeaderUserbox({ auth, logout }) {
         className="ml-2"
       >
         <div className="dropdown-menu-right dropdown-menu-lg overflow-hidden p-3">
-          {isAuthenticated ? (
+          {user ? (
             <AuthLists userName={user.firstName} logout={logout} />
           ) : (
             <GuestsLists />

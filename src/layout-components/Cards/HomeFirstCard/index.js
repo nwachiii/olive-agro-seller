@@ -17,7 +17,7 @@ export default function HomeFirstCard() {
               </a>
               <div className="flex-grow-1 mt-4">
                 <h1 className="text-black-40">
-                  {user ? ` ${user.firstName} ${user.lastName}` : ""}
+                  {user ? ` ${user.firstName} ${user.lastName}` : <h4>You are not logged in yet...</h4>}
                 </h1>
                 <a className="text-black-50 pt-2" href="/#">
                   {user ? <h5>View Profile</h5> : ""}

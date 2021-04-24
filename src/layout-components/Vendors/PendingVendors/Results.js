@@ -42,7 +42,7 @@ const Results = ({ className, PendingVendors, ...rest }) => {
         config
       )
       .then((response) => {
-        console.log("Pending vendors response: ", response);
+        console.log("Pending vendors response: ", response.data);
         setData(response.data);
       })
       .catch((err) => console.log(err));
@@ -59,7 +59,7 @@ const Results = ({ className, PendingVendors, ...rest }) => {
     if (event.target.checked) {
       newSelectedPendingVendorIds =
         data.merchants &&
-        data.merchants.map((PendingVendor) => PendingVendor._id);
+        data.merchants.map((PendingVendor) => PendingVendor.user);
     } else {
       newSelectedPendingVendorIds = [];
     }
@@ -104,9 +104,9 @@ const Results = ({ className, PendingVendors, ...rest }) => {
                 : data.merchants.map((PendingVendor) => (
                     <TableRow
                       hover
-                      key={PendingVendor._id}
+                      key={PendingVendor.user}
                       selected={
-                        selectedPendingVendorIds.indexOf(PendingVendor._id) !==
+                        selectedPendingVendorIds.indexOf(PendingVendor.user) !==
                         -1
                       }
                     >
@@ -114,11 +114,11 @@ const Results = ({ className, PendingVendors, ...rest }) => {
                         <Checkbox
                           checked={
                             selectedPendingVendorIds.indexOf(
-                              PendingVendor._id
+                              PendingVendor.user
                             ) !== -1
                           }
                           onChange={(event) =>
-                            handleSelectOne(event, PendingVendor._id)
+                            handleSelectOne(event, PendingVendor.user)
                           }
                           value="true"
                         />
