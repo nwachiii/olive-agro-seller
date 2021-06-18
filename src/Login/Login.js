@@ -1,6 +1,6 @@
 import React, { useState } from "react";
 import PropTypes from "prop-types";
-import { Link, Redirect } from "react-router-dom";
+import {Redirect } from "react-router-dom";
 import { connect } from "react-redux";
 import MetaTags from "react-meta-tags";
 
@@ -10,7 +10,6 @@ import {
   Avatar,
   TextField,
   Button,
-  Typography,
 } from "@material-ui/core";
 import LockOutlinedIcon from "@material-ui/icons/LockOutlined";
 
@@ -97,16 +96,16 @@ const Login = ({ login, isAuthenticated }) => {
               fullWidth
               required
             />
-            <Typography className="my-2">
+            {/* <Typography className="my-2">
               <Link to="/">Forgot password ?</Link>
-            </Typography>
-            <div className="button-box">
+            </Typography> */}
+            <div className="button-box my-3">
               <Button type="submit" style={btnstyle} fullWidth>
                 Log in
               </Button>
             </div>
             <div className="text-center my-3">
-              <Link to="/Register">Don't have an account yet? Register</Link>
+              {/* <a href="https://oliveagro.org">Don't have an account yet? Register</a> */}
             </div>
           </form>
         </Paper>

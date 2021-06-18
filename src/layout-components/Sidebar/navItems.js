@@ -48,22 +48,6 @@ export default [
     "to": "/Home"
   },
   {
-    "label": "Messages",
-    "icon": "SettingsIcon",
-    "content": [
-           {
-        "label": "Inbox",
-        "description": "All your received messages are contained here...",
-        "to": "/Inbox"
-      },
-      {
-        "label": "Sent Messages",
-        "description": "",
-        "to": "/Inbox"
-      }
-    ]
-  },
-  {
     "label": "All Orders",
     "to": "/AllOrders"
   },  
